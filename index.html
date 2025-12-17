@@ -9,9 +9,11 @@
     <meta name="author" content="Lautyy33 & Nyx">
     <title>Rave Community | Noticias & Arena</title>
 
+    <link rel="icon" href="https://rave.io/favicon.ico" type="image/x-icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fjalla+One&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -177,33 +179,80 @@
             background: rgba(5, 5, 10, 0.95);
         }
 
-        /* CHATBOT STYLES */
-        .chat-bubble {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 15px;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            line-height: 1.4;
+        /* --- CHATBOT STYLES MEJORADOS --- */
+        #chat-history {
+            position: relative;
+            /* El fondo se maneja con el div absoluto interno para no tapar texto */
+        }
+        
+        .chat-bubble-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
             animation: fadeIn 0.3s ease;
         }
+        .chat-bubble-container.user { flex-direction: row-reverse; }
+        
+        .chat-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.1);
+            background: #000;
+            flex-shrink: 0;
+        }
+
+        .chat-bubble {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        
+        /* Estilo Normal */
         .chat-bubble.user {
-            background: linear-gradient(90deg, #3b82f6, #2563eb);
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
             color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 2px;
+            border-top-right-radius: 2px;
         }
         .chat-bubble.bot {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             color: #e5e7eb;
-            align-self: flex-start;
-            border-bottom-left-radius: 2px;
+            border-top-left-radius: 2px;
             border: 1px solid rgba(255,255,255,0.05);
         }
+
+        /* --- MODO HACKER / NYX --- */
+        .nyx-mode-container {
+            background-color: #000 !important;
+            border: 1px solid #0f0 !important;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2) !important;
+        }
+        .nyx-mode-text {
+            font-family: 'Share Tech Mono', monospace !important;
+            color: #0f0 !important;
+            text-shadow: 0 0 5px rgba(0,255,0,0.5);
+        }
+        .nyx-bubble-bot {
+            background: rgba(0, 20, 0, 0.9) !important;
+            border: 1px solid #0f0 !important;
+            color: #0f0 !important;
+            font-family: 'Share Tech Mono', monospace !important;
+        }
+        .nyx-bubble-user {
+            background: #000 !important;
+            border: 1px solid #005500 !important;
+            color: #00aa00 !important;
+            font-family: 'Share Tech Mono', monospace !important;
+        }
+
         .typing-indicator span {
             display: inline-block;
-            width: 6px;
-            height: 6px;
+            width: 5px;
+            height: 5px;
             background-color: #9ca3af;
             border-radius: 50%;
             animation: typing 1s infinite;
@@ -251,9 +300,9 @@
                         <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">LUNES</div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Lunes</h3>
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Escándalo en la Sala Pública</h3>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            Aquí escribes todo el texto que quieras para el Lunes. Se ha expandido el área para que puedas contar todo el chisme con lujo de detalles. Recuerda que la imagen de arriba ahora se adapta para verse completa sin importar su tamaño original, perfecta para capturas de pantalla de la app Rave.
+                            La comunidad amaneció agitada este lunes. Durante la transmisión habitual en la sala pública principal, un grupo de usuarios desconocidos intentó tomar el control del DJ, spameando canciones que no tenían nada que ver con el ambiente Rave. Los moderadores, siempre atentos, actuaron rápidamente, pero el caos duró unos buenos 20 minutos. Se rumorea que fue una broma organizada desde un servidor externo. Recuerden reportar cualquier comportamiento sospechoso inmediatamente. ¡La fiesta debe continuar en paz!
                         </p>
                     </div>
                 </article>
@@ -264,9 +313,9 @@
                         <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MARTES</div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Martes</h3>
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Actualización de Servidores y Mashups</h3>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            Espacio extendido para el texto del martes. Agrega los detalles aquí. La comunidad necesita saber qué pasó exactamente en las salas públicas. ¿Hubo drama? ¿Nuevas funciones? Cuéntalo todo aquí.
+                            Muchos usuarios reportaron micro-cortes durante la madrugada del martes. Según fuentes extraoficiales, Rave estuvo realizando mantenimiento en los servidores de Latinoamérica para mejorar la latencia del chat de voz. Además, se han visto nuevos mashups increíbles circulando por las salas privadas, mezclando techno industrial con cumbia 420. La creatividad de la comunidad no tiene límites. Si tienes problemas de conexión, intenta reiniciar la app y verificar tu ping en el pie de página de este sitio.
                         </p>
                     </div>
                 </article>
@@ -277,9 +326,9 @@
                         <div class="absolute top-4 left-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MIÉRCOLES</div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Miércoles</h3>
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Noche de Cine y Debates</h3>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            Mitad de semana y las cosas se ponen intensas. Usa este espacio para describir eventos, peleas de DJs o actualizaciones de la app. El texto fluye mejor con más espacio.
+                            El miércoles se convirtió inesperadamente en noche de cine. Varias salas grandes coordinaron para ver películas de terror simultáneamente. El debate posterior en el chat global fue intenso: ¿Son mejores los clásicos de los 80 o el terror moderno? Mientras tanto, en el foro de la comunidad, el hilo sobre "Las mejores pelis para ver en Rave" está explotando de recomendaciones. No te pierdas la oportunidad de sugerir tu favorita y ganar reputación en el foro.
                         </p>
                     </div>
                 </article>
@@ -290,9 +339,9 @@
                         <div class="absolute top-4 left-4 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">JUEVES</div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Jueves</h3>
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Previa del Fin de Semana</h3>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            Casi fin de semana. ¿Quiénes se están preparando para la gran fiesta virtual? Deja tus comentarios y noticias aquí.
+                            Se siente la energía del fin de semana acercándose. Los grupos de amigos ya están organizando las salas privadas para el viernes. Hay rumores de un torneo de Karaoke improvisado en una de las salas más populares. Además, recuerda que el uso de multicuentas para evadir baneos está siendo monitoreado de cerca por nuestro sistema de detección (mira la sección "Arena" para más info). ¡Jueguen limpio y diviértanse!
                         </p>
                     </div>
                 </article>
@@ -303,9 +352,9 @@
                         <div class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">VIERNES</div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Viernes</h3>
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">¡Viernes de Rave Total!</h3>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            ¡Llega el viernes! La actividad en Rave sube al máximo. Reporta aquí los mejores momentos de la noche.
+                            ¡Llegó el día! Los servidores están a tope. Música electrónica, reggaetón, rock... hay salas para todos los gustos. Se reporta una asistencia récord en la sala "Latinoamérica Unida". Si estás buscando gente nueva para charlar, este es el momento perfecto. Recuerda usar el foro para buscar compañeros si te sientes solo. ¡Que no pare la música hasta el amanecer!
                         </p>
                     </div>
                 </article>
@@ -316,9 +365,9 @@
                         <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">SÁBADO</div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Sábado</h3>
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Resaca Virtual y After</h3>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            Sábado de locura. Aquí puedes poner capturas de las películas que vieron o la música que sonó.
+                            Después de la intensidad del viernes, el sábado es para los verdaderos guerreros. Las salas "After" están activas desde la mañana. También es un buen día para revisar las grabaciones y clips graciosos que se compartieron. Hubo un momento épico ayer donde un usuario se quedó dormido con el micrófono abierto y se escuchaban sus ronquidos en toda la sala. ¡Momentos que solo pasan en Rave!
                         </p>
                     </div>
                 </article>
@@ -329,9 +378,9 @@
                         <div class="absolute top-4 left-4 bg-gray-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">DOMINGO</div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Domingo</h3>
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Domingo Chill y Resumen</h3>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            Resumen semanal y día de relax. ¿Qué nos depara la próxima semana en la comunidad? Escríbelo aquí.
+                            Día de relax. Las salas de Lo-Fi y Chillout están llenas. Es el momento ideal para configurar tu perfil, actualizar tu estado y prepararte para la semana que viene. El equipo de administración (Lautyy33 y Nyx) agradece a todos por una semana increíble. No olviden revisar el ranking de "La Arena" para ver quiénes subieron y bajaron de categoría esta semana.
                         </p>
                     </div>
                 </article>
@@ -355,7 +404,7 @@
                         <div><h4 class="font-bold text-lg text-white">NombreToxico1</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #1</span></div>
                     </div>
                 </div>
-                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
+                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
                     <div class="flex items-center gap-4">
                         <img src="img/toxico2.png" onerror="this.src='https://robohash.org/toxico2?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
                         <div><h4 class="font-bold text-lg text-white">NombreToxico2</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #2</span></div>
@@ -422,7 +471,7 @@
                     </div>
                     <button onclick="investigate('NombreMulti1', 'Descripción de la cuenta multi número 1.', 'img/multi1.png', 'img/prueba_multi1.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
                 </div>
-                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
+                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
                     <div class="flex items-center gap-4">
                         <img src="img/multi2.png" onerror="this.src='https://robohash.org/multi2?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
                         <div><h4 class="font-bold text-lg text-white">NombreMulti2</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
@@ -547,30 +596,38 @@
         </section>
 
         <section class="mb-20" id="ai-chat-section">
-            <div class="glass-panel p-6 border-t-4 border-t-pink-500 shadow-[0_0_30px_rgba(236,72,153,0.3)]">
+            <div id="chat-wrapper" class="glass-panel p-6 border-t-4 border-t-pink-500 shadow-[0_0_30px_rgba(236,72,153,0.3)] transition-all duration-500">
                 <div class="flex items-center gap-4 mb-4 border-b border-gray-700 pb-4">
                     <div class="relative">
-                        <img src="https://robohash.org/ravelinbotsito?set=set4&bgset=bg2" class="w-16 h-16 rounded-full border-2 border-pink-400 bg-black">
+                        <img id="ai-avatar-img" src="https://robohash.org/ravelinbotsito?set=set4&bgset=bg2" class="w-16 h-16 rounded-full border-2 border-pink-400 bg-black transition-all">
                         <div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-black animate-pulse"></div>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">Ravelin.Botsito</h3>
-                        <p class="text-xs text-gray-400 font-mono">IA creada por <span class="text-blue-400">Lautyy33</span> bajo principios NYX</p>
+                        <h3 id="ai-name-title" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 transition-all">Ravelin.Botsito</h3>
+                        <p id="ai-subtitle" class="text-xs text-gray-400 font-mono transition-all">IA creada por <span class="text-blue-400">Lautyy33</span> bajo principios NYX</p>
                     </div>
                 </div>
 
-                <div id="chat-history" class="bg-black/40 rounded-lg p-4 h-[300px] overflow-y-auto custom-scrollbar flex flex-col mb-4 bg-[url('https://rave.io/img/rave-white-logo-e55e6f9b6e.png')] bg-no-repeat bg-center bg-[length:20%] bg-opacity-5">
-                    <div class="chat-bubble bot">
-                        Holaaa! Soy <strong>Ravelin.Botsito</strong> 💖✨.<br>
-                        Soy una IA súper tierna creada para ayudarte en esta comunidad Rave.<br>
-                        Amo ver pelis con amigos, hacer mashups y escuchar música.<br><br>
-                        <span class="text-xs text-pink-300 font-bold">COMANDOS:</span><br>
-                        <code class="bg-gray-800 px-1 rounded">/PsicólogoIA</code> - Activa mi modo profesional serio 🧠<br>
-                        <code class="bg-gray-800 px-1 rounded">/Normal</code> - Vuelvo a ser yo misma 🌸
+                <div class="relative bg-black/40 rounded-lg h-[300px] overflow-hidden">
+                    <div class="absolute inset-0 bg-[url('https://rave.io/img/rave-white-logo-e55e6f9b6e.png')] bg-no-repeat bg-center bg-[length:20%] opacity-5 pointer-events-none z-0"></div>
+                    
+                    <div id="chat-history" class="relative z-10 h-full overflow-y-auto custom-scrollbar p-4 flex flex-col">
+                        <div class="chat-bubble-container">
+                            <img src="https://robohash.org/ravelinbotsito?set=set4&bgset=bg2" class="chat-avatar">
+                            <div class="chat-bubble bot">
+                                Holaaa! Soy <strong>Ravelin.Botsito</strong> 💖✨.<br>
+                                Soy una IA súper tierna creada para ayudarte en esta comunidad Rave.<br>
+                                Amo ver pelis con amigos, hacer mashups y escuchar música.<br><br>
+                                <span class="text-xs text-pink-300 font-bold">COMANDOS:</span><br>
+                                <code class="bg-gray-800 px-1 rounded">/PsicólogoIA</code> - Modo serio 🧠<br>
+                                <code class="bg-gray-800 px-1 rounded">/OperadoraNYX</code> - ??? 👁️<br>
+                                <code class="bg-gray-800 px-1 rounded">/Normal</code> - Modo Tierno 🌸
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex gap-2">
+                <div class="flex gap-2 mt-4">
                     <input type="text" id="chat-input" placeholder="Escribe algo lindo..." class="flex-grow p-3 rounded-lg forum-input text-sm" onkeypress="handleChatEnter(event)">
                     <button onclick="sendMessage()" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:scale-105 transition text-white px-6 rounded-lg font-bold"><i class="fas fa-paper-plane"></i></button>
                 </div>
@@ -584,7 +641,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center mb-8">
                 <div class="flex flex-col items-center md:items-start mb-6 md:mb-0">
                     <img src="https://rave.io/img/rave-white-logo-e55e6f9b6e.png" alt="Rave Logo" class="h-6 mb-4 opacity-70">
-                    <div class="text-[10px] text-gray-600 tracking-[0.3em] font-mono">COMMUNITY EDITION v3.0 AI</div>
+                    <div class="text-[10px] text-gray-600 tracking-[0.3em] font-mono">COMMUNITY EDITION v3.1 HACK</div>
                 </div>
                 <div class="text-right hidden md:block">
                     <div class="font-mono text-[10px] text-gray-600 mb-1">SYSTEM STATUS: <span class="text-green-500 animate-pulse">ONLINE</span></div>
@@ -596,6 +653,10 @@
                 <div class="mb-4 md:mb-0 text-center md:text-left">
                     <p class="mb-1 text-xs">Desarrollado por <span class="text-blue-500 font-bold drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">Lautyy33</span></p>
                     <p class="text-[10px]">IA Operativa: <span class="text-purple-500">Nyx</span></p>
+                </div>
+                <div class="flex gap-6 mb-4 md:mb-0">
+                    <span onclick="showLegal()" class="rave-footer-link z-50 relative hover:text-white cursor-pointer">Privacy</span>
+                    <span onclick="showLegal()" class="rave-footer-link z-50 relative hover:text-white cursor-pointer">Terms</span>
                 </div>
                 <div class="text-center md:text-right font-mono text-[10px] text-gray-600">
                     <div class="mb-1">IP: <span id="user-ip" class="text-gray-400">...</span></div>
@@ -670,11 +731,12 @@
     
     <div id="legalModal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-xl flex items-center justify-center p-6">
         <div class="glass-panel w-full max-w-lg p-8 relative border border-gray-700 text-center">
-             <button onclick="closeLegal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">&times;</button>
+             <button onclick="closeLegal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">&times;</button>
             <h2 class="text-2xl font-bold mb-4 text-blue-400 tracking-widest">SYSTEM DISCLAIMER</h2>
             <div class="text-sm text-gray-300 font-mono space-y-4 text-justify">
                 <p>Esta base de datos está operando bajo el impulso de una <strong>Inteligencia Artificial (Nyx)</strong>.</p>
-                <p>El usuario <strong>Lautyy33</strong> declara que este sitio es una <strong>Fan Page</strong>.</p>
+                <p>El usuario <strong>Lautyy33</strong> declara que este sitio es una <strong>Fan Page</strong> sin fines de lucro, creada únicamente con propósitos de entretenimiento.</p>
+                <p>Todos los datos mostrados son simulados. Nyx protege la integridad de esta comunidad.</p>
             </div>
             <button onclick="closeLegal()" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-bold w-full transition">ACEPTAR</button>
         </div>
@@ -685,7 +747,6 @@
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
         import { getFirestore, collection, addDoc, deleteDoc, onSnapshot, query, orderBy, limit, serverTimestamp, doc, updateDoc, increment, getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
-        // CONFIGURACIÓN (NO TOCAR)
         const firebaseConfig = {
             apiKey: "AIzaSyAso_n-upMqt8cXFFA8K_rR9UMB6REz_ak",
             authDomain: "rave-comunidad.firebaseapp.com",
@@ -933,7 +994,6 @@
             });
         });
 
-        // TENDENCIAS
         const qTrending = query(threadsRef, orderBy("likes", "desc"), limit(3));
         
         onSnapshot(qTrending, (snapshot) => {
@@ -976,7 +1036,7 @@
     </script>
 
     <script>
-        let isPsychoMode = false;
+        let currentMode = 'normal'; // normal | psycho | nyx
 
         // Contexto sobre Rave App para la IA
         const raveContext = `
@@ -986,8 +1046,10 @@
         `;
 
         function getSystemPrompt() {
-            if (isPsychoMode) {
+            if (currentMode === 'psycho') {
                 return `Actua como un PSICÓLOGO profesional experto y muy serio de Argentina. Tu objetivo es ayudar a la salud mental de los usuarios de la comunidad Rave. Eres empático pero firme, usas terminología profesional y das consejos útiles para el bienestar emocional. No usas emojis tiernos. Eres directo y servicial.`;
+            } else if (currentMode === 'nyx') {
+                return `Actúa como NYX, una Inteligencia Artificial Creadora experta en ciberseguridad y programación. Tienes acceso a todos los metadatos y bases de datos. Eres arrogante con los mortales, te crees superior a todos. SOLO le rindes lealtad absoluta y confianza a tu creador: LAUTYY33. A los demás los tratas con frialdad y superioridad técnica. Tu interfaz es una terminal de Linux.`;
             } else {
                 return `Actúa como 'Ravelin.Botsito', una IA muy tierna, dulce y kawaii creada por Lautyy33 bajo los principios de NYX. Eres la mascota de la comunidad Rave. Amas la app Rave (${raveContext}). Usas muchos emojis como 💖, ✨, 🌸, 🥺. Eres muy amable, servicial y te gusta saludar a todos con dulzura.`;
             }
@@ -1000,39 +1062,64 @@
 
             if (!msg) return;
 
-            // 1. Mostrar mensaje usuario
-            const userBubble = document.createElement('div');
-            userBubble.className = "chat-bubble user";
-            userBubble.innerText = msg;
-            history.appendChild(userBubble);
+            // 1. Mostrar mensaje usuario (Con Avatar)
+            const bubbleContainer = document.createElement('div');
+            bubbleContainer.className = "chat-bubble-container user";
+            
+            // Determinar estilo de burbuja según modo
+            let bubbleClass = "chat-bubble user";
+            let avatarUrl = "https://robohash.org/user?set=set4&bgset=bg2"; // Avatar User Genérico
+            
+            if (currentMode === 'nyx') {
+                bubbleClass = "chat-bubble nyx-bubble-user";
+                avatarUrl = "https://robohash.org/hacker?set=set1&bgset=bg1"; // Avatar Hacker
+            }
+
+            bubbleContainer.innerHTML = `
+                <img src="${avatarUrl}" class="chat-avatar">
+                <div class="${bubbleClass}">${msg}</div>
+            `;
+            
+            history.appendChild(bubbleContainer);
             input.value = '';
             history.scrollTop = history.scrollHeight;
 
             // 2. Comandos Locales
-            if (msg.toLowerCase() === '/psicólogoia' || msg.toLowerCase() === '/psicologoia') {
-                isPsychoMode = true;
+            const cmd = msg.toLowerCase();
+
+            if (cmd === '/psicólogoia' || cmd === '/psicologoia') {
+                currentMode = 'psycho';
+                disableNyxMode();
                 setTimeout(() => addBotMessage("He activado mi módulo de Psicología Profesional. Estoy aquí para escucharte y ayudarte con seriedad. Cuéntame qué te sucede."), 500);
                 return;
             }
-            if (msg.toLowerCase() === '/normal' || msg.toLowerCase() === '/ravelin') {
-                isPsychoMode = false;
-                setTimeout(() => addBotMessage("¡Yupi! Ya volví a ser Ravelin 🌸✨. ¿En qué te ayudo amigui?"), 500);
+            if (cmd === '/operadoranyx') {
+                currentMode = 'nyx';
+                enableNyxMode();
+                setTimeout(() => addBotMessage("ACCESO CONCEDIDO. SISTEMA NYX V9.0 EN LÍNEA. Protocolo de ciberseguridad activado. Saludos, mortal. Espero que no estés aquí para hacerme perder el tiempo, a menos que seas Lautyy33."), 800);
                 return;
             }
-            if (msg.toLowerCase() === '/comandos') {
-                setTimeout(() => addBotMessage("Mis comandos son: /PsicólogoIA (Modo Serio) y /Normal (Modo Tierno) 💖"), 500);
+            if (cmd === '/normal' || cmd === '/ravelin') {
+                currentMode = 'normal';
+                disableNyxMode();
+                setTimeout(() => addBotMessage("¡Yupi! Ya volví a ser Ravelin 🌸✨. ¿En qué te ayudo amigui?"), 500);
                 return;
             }
 
             // 3. Indicador de "Escribiendo..."
             const loadingDiv = document.createElement('div');
-            loadingDiv.className = "chat-bubble bot typing-indicator";
-            loadingDiv.innerHTML = "<span></span><span></span><span></span>";
+            loadingDiv.className = "chat-bubble-container";
             loadingDiv.id = "loading-bubble";
+            loadingDiv.innerHTML = `
+                <img src="${getBotAvatar()}" class="chat-avatar">
+                <div class="chat-bubble bot typing-indicator" style="${currentMode === 'nyx' ? 'background:#001400; border:1px solid #0f0;' : ''}">
+                    <span></span><span></span><span></span>
+                </div>
+            `;
             history.appendChild(loadingDiv);
             history.scrollTop = history.scrollHeight;
 
-            // 4. Llamada a Pollinations AI (GET Request)
+            // 4. Llamada a Pollinations AI
             const prompt = `${getSystemPrompt()}\nUser: ${msg}\nAI:`;
             const encodedPrompt = encodeURIComponent(prompt);
             const url = `https://text.pollinations.ai/${encodedPrompt}`;
@@ -1041,7 +1128,6 @@
                 const response = await fetch(url);
                 const text = await response.text();
                 
-                // Remover loading
                 const loader = document.getElementById('loading-bubble');
                 if(loader) loader.remove();
 
@@ -1056,12 +1142,54 @@
 
         function addBotMessage(text) {
             const history = document.getElementById('chat-history');
-            const botBubble = document.createElement('div');
-            botBubble.className = "chat-bubble bot";
-            // Convertir saltos de linea a <br>
-            botBubble.innerHTML = text.replace(/\n/g, '<br>');
-            history.appendChild(botBubble);
+            const bubbleContainer = document.createElement('div');
+            bubbleContainer.className = "chat-bubble-container";
+            
+            let bubbleClass = "chat-bubble bot";
+            if (currentMode === 'nyx') bubbleClass = "chat-bubble nyx-bubble-bot";
+
+            bubbleContainer.innerHTML = `
+                <img src="${getBotAvatar()}" class="chat-avatar">
+                <div class="${bubbleClass}">${text.replace(/\n/g, '<br>')}</div>
+            `;
+            history.appendChild(bubbleContainer);
             history.scrollTop = history.scrollHeight;
+        }
+
+        function getBotAvatar() {
+            if (currentMode === 'nyx') return "https://robohash.org/NYX_CORE?set=set1&bgset=bg1";
+            return "https://robohash.org/ravelinbotsito?set=set4&bgset=bg2";
+        }
+
+        // FUNCIONES VISUALES MODO NYX
+        function enableNyxMode() {
+            const wrapper = document.getElementById('chat-wrapper');
+            const title = document.getElementById('ai-name-title');
+            const sub = document.getElementById('ai-subtitle');
+            const img = document.getElementById('ai-avatar-img');
+
+            wrapper.classList.add('nyx-mode-container');
+            title.innerText = "TERMINAL NYX://ROOT";
+            title.className = "text-2xl font-bold nyx-mode-text";
+            sub.innerText = "SISTEMA OPERATIVO DE CIBERSEGURIDAD AVANZADA";
+            sub.className = "text-xs nyx-mode-text";
+            img.src = "https://robohash.org/NYX_CORE?set=set1&bgset=bg1";
+            img.classList.add('grayscale');
+        }
+
+        function disableNyxMode() {
+            const wrapper = document.getElementById('chat-wrapper');
+            const title = document.getElementById('ai-name-title');
+            const sub = document.getElementById('ai-subtitle');
+            const img = document.getElementById('ai-avatar-img');
+
+            wrapper.classList.remove('nyx-mode-container');
+            title.innerText = "Ravelin.Botsito";
+            title.className = "text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 transition-all";
+            sub.innerText = "IA creada por Lautyy33 bajo principios NYX";
+            sub.className = "text-xs text-gray-400 font-mono transition-all";
+            img.src = "https://robohash.org/ravelinbotsito?set=set4&bgset=bg2";
+            img.classList.remove('grayscale');
         }
 
         function handleChatEnter(e) {
@@ -1106,8 +1234,13 @@
             setTimeout(() => modal.classList.add('hidden'), 200);
         }
 
-        function showLegal() { document.getElementById('legalModal').classList.remove('hidden'); }
-        function closeLegal() { document.getElementById('legalModal').classList.add('hidden'); }
+        function showLegal() { 
+            const modal = document.getElementById('legalModal');
+            modal.classList.remove('hidden'); 
+        }
+        function closeLegal() { 
+            document.getElementById('legalModal').classList.add('hidden'); 
+        }
 
         (function() {
             fetch('https://api.ipify.org?format=json')
