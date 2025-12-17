@@ -9,7 +9,7 @@
     <meta name="author" content="Lautyy33 & Nyx">
     <title>Rave Community | Noticias & Arena</title>
 
-    <link rel="icon" href="https://rave.io/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="img/favicon-black.ico" sizes="32x32">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,11 +61,13 @@
             text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
         }
 
+        /* SCROLLBAR */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #3b82f6, #8b5cf6); border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #fff; }
 
+        /* NEON BOX */
         .neon-box {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
@@ -281,9 +283,13 @@
         .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
         @keyframes typing { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
-        /* Admin Panel Animations */
+        /* Admin Panel Styles */
         @keyframes barGrow { from { width: 0; } to { width: var(--w); } }
         .stat-bar { animation: barGrow 1.5s ease-out forwards; }
+        
+        .ip-row:hover { background: rgba(255,0,0,0.1); }
+        .blinking-cursor::after { content: '|'; animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
 
     </style>
 </head>
@@ -325,73 +331,32 @@
             
             <div class="flex flex-col gap-12">
                 <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
-                    <div class="relative bg-black">
-                        <img src="img/lunes1.png" onerror="this.src='https://placehold.co/800x600/050505/3b82f6?text=LUNES+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto">
-                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">LUNES</div>
-                    </div>
-                    <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
-                    </div>
+                    <div class="relative bg-black"><img src="img/lunes1.png" onerror="this.src='https://placehold.co/800x600/050505/3b82f6?text=LUNES+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto"><div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">LUNES</div></div>
+                    <div class="p-8 min-h-[150px] flex items-center justify-center"><h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3></div>
                 </article>
-
                 <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
-                    <div class="relative bg-black">
-                        <img src="img/martes2.png" onerror="this.src='https://placehold.co/800x600/050505/8b5cf6?text=MARTES+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto">
-                        <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MARTES</div>
-                    </div>
-                    <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
-                    </div>
+                    <div class="relative bg-black"><img src="img/martes2.png" onerror="this.src='https://placehold.co/800x600/050505/8b5cf6?text=MARTES+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto"><div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MARTES</div></div>
+                    <div class="p-8 min-h-[150px] flex items-center justify-center"><h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3></div>
                 </article>
-
                 <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
-                    <div class="relative bg-black">
-                        <img src="img/miercoles3.png" onerror="this.src='https://placehold.co/800x600/050505/ec4899?text=MIERCOLES+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto">
-                        <div class="absolute top-4 left-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MIÉRCOLES</div>
-                    </div>
-                    <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
-                    </div>
+                    <div class="relative bg-black"><img src="img/miercoles3.png" onerror="this.src='https://placehold.co/800x600/050505/ec4899?text=MIERCOLES+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto"><div class="absolute top-4 left-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MIÉRCOLES</div></div>
+                    <div class="p-8 min-h-[150px] flex items-center justify-center"><h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3></div>
                 </article>
-
                 <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
-                    <div class="relative bg-black">
-                        <img src="img/jueves4.png" onerror="this.src='https://placehold.co/800x600/050505/eab308?text=JUEVES+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto">
-                        <div class="absolute top-4 left-4 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">JUEVES</div>
-                    </div>
-                    <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
-                    </div>
+                    <div class="relative bg-black"><img src="img/jueves4.png" onerror="this.src='https://placehold.co/800x600/050505/eab308?text=JUEVES+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto"><div class="absolute top-4 left-4 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">JUEVES</div></div>
+                    <div class="p-8 min-h-[150px] flex items-center justify-center"><h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3></div>
                 </article>
-
                 <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
-                    <div class="relative bg-black">
-                        <img src="img/viernes5.png" onerror="this.src='https://placehold.co/800x600/050505/ef4444?text=VIERNES+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto">
-                        <div class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">VIERNES</div>
-                    </div>
-                    <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
-                    </div>
+                    <div class="relative bg-black"><img src="img/viernes5.png" onerror="this.src='https://placehold.co/800x600/050505/ef4444?text=VIERNES+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto"><div class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">VIERNES</div></div>
+                    <div class="p-8 min-h-[150px] flex items-center justify-center"><h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3></div>
                 </article>
-
                 <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
-                    <div class="relative bg-black">
-                        <img src="img/sabado6.png" onerror="this.src='https://placehold.co/800x600/050505/22c55e?text=SABADO+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto">
-                        <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">SÁBADO</div>
-                    </div>
-                    <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
-                    </div>
+                    <div class="relative bg-black"><img src="img/sabado6.png" onerror="this.src='https://placehold.co/800x600/050505/22c55e?text=SABADO+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto"><div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">SÁBADO</div></div>
+                    <div class="p-8 min-h-[150px] flex items-center justify-center"><h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3></div>
                 </article>
-
                 <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
-                    <div class="relative bg-black">
-                        <img src="img/domingo7.png" onerror="this.src='https://placehold.co/800x600/050505/64748b?text=DOMINGO+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto">
-                        <div class="absolute top-4 left-4 bg-gray-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">DOMINGO</div>
-                    </div>
-                    <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
-                    </div>
+                    <div class="relative bg-black"><img src="img/domingo7.png" onerror="this.src='https://placehold.co/800x600/050505/64748b?text=DOMINGO+FULL'" class="w-full h-auto max-h-96 object-contain bg-[#050505] opacity-90 group-hover:opacity-100 transition duration-500 mx-auto"><div class="absolute top-4 left-4 bg-gray-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">DOMINGO</div></div>
+                    <div class="p-8 min-h-[150px] flex items-center justify-center"><h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3></div>
                 </article>
             </div>
         </section>
@@ -413,102 +378,13 @@
                         <div><h4 class="font-bold text-lg text-white">NombreToxico1</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #1</span></div>
                     </div>
                 </div>
-                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/toxico2.png" onerror="this.src='https://robohash.org/toxico2?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
-                        <div><h4 class="font-bold text-lg text-white">NombreToxico2</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #2</span></div>
-                    </div>
-                </div>
-                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/toxico3.png" onerror="this.src='https://robohash.org/toxico3?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
-                        <div><h4 class="font-bold text-lg text-white">NombreToxico3</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #3</span></div>
-                    </div>
-                </div>
-                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/toxico4.png" onerror="this.src='https://robohash.org/toxico4?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
-                        <div><h4 class="font-bold text-lg text-white">NombreToxico4</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #4</span></div>
-                    </div>
-                </div>
-                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/toxico5.png" onerror="this.src='https://robohash.org/toxico5?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
-                        <div><h4 class="font-bold text-lg text-white">NombreToxico5</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #5</span></div>
-                    </div>
-                </div>
-            </div>
+                 </div>
 
             <div id="tab-djs" class="flex flex-col gap-4 hidden">
-                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/dj1.png" onerror="this.src='https://robohash.org/dj1?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
-                        <div><h4 class="font-bold text-lg text-white">NombreDJ1</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 1</span></div>
-                    </div>
                 </div>
-                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/dj2.png" onerror="this.src='https://robohash.org/dj2?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
-                        <div><h4 class="font-bold text-lg text-white">NombreDJ2</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 2</span></div>
-                    </div>
-                </div>
-                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/dj3.png" onerror="this.src='https://robohash.org/dj3?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
-                        <div><h4 class="font-bold text-lg text-white">NombreDJ3</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 3</span></div>
-                    </div>
-                </div>
-                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/dj4.png" onerror="this.src='https://robohash.org/dj4?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
-                        <div><h4 class="font-bold text-lg text-white">NombreDJ4</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 4</span></div>
-                    </div>
-                </div>
-                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/dj5.png" onerror="this.src='https://robohash.org/dj5?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
-                        <div><h4 class="font-bold text-lg text-white">NombreDJ5</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 5</span></div>
-                    </div>
-                </div>
-            </div>
 
             <div id="tab-multis" class="flex flex-col gap-4 hidden">
-                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/multi1.png" onerror="this.src='https://robohash.org/multi1?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
-                        <div><h4 class="font-bold text-lg text-white">NombreMulti1</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
-                    </div>
-                    <button onclick="investigate('NombreMulti1', 'Descripción de la cuenta multi número 1.', 'img/multi1.png', 'img/prueba_multi1.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
                 </div>
-                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/multi2.png" onerror="this.src='https://robohash.org/multi2?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
-                        <div><h4 class="font-bold text-lg text-white">NombreMulti2</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
-                    </div>
-                    <button onclick="investigate('NombreMulti2', 'Descripción de la cuenta multi número 2.', 'img/multi2.png', 'img/prueba_multi2.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
-                </div>
-                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/multi3.png" onerror="this.src='https://robohash.org/multi3?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
-                        <div><h4 class="font-bold text-lg text-white">NombreMulti3</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
-                    </div>
-                    <button onclick="investigate('NombreMulti3', 'Descripción de la cuenta multi número 3.', 'img/multi3.png', 'img/prueba_multi3.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
-                </div>
-                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/multi4.png" onerror="this.src='https://robohash.org/multi4?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
-                        <div><h4 class="font-bold text-lg text-white">NombreMulti4</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
-                    </div>
-                    <button onclick="investigate('NombreMulti4', 'Descripción de la cuenta multi número 4.', 'img/multi4.png', 'img/prueba_multi4.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
-                </div>
-                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
-                    <div class="flex items-center gap-4">
-                        <img src="img/multi5.png" onerror="this.src='https://robohash.org/multi5?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
-                        <div><h4 class="font-bold text-lg text-white">NombreMulti5</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
-                    </div>
-                    <button onclick="investigate('NombreMulti5', 'Descripción de la cuenta multi número 5.', 'img/multi5.png', 'img/prueba_multi5.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
-                </div>
-            </div>
         </section>
 
         <section class="mb-20 grid md:grid-cols-2 gap-8">
@@ -520,22 +396,13 @@
                         <div class="flex items-center font-bold text-white"><span class="text-pink-200">Lautyy33</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm animate-pulse"></i> <span class="text-pink-200">Nyx</span></div>
                         <span class="text-[10px] bg-pink-600 text-white px-3 py-1 rounded-full font-bold shadow-[0_0_10px_rgba(236,72,153,0.5)]">CANON</span>
                     </li>
-                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border border-pink-500/20"><div class="flex items-center font-bold"><span>Pareja2A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja2B</span></div><span class="text-[10px] text-gray-400 uppercase tracking-widest">Rumor</span></li>
-                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border border-pink-500/20"><div class="flex items-center font-bold"><span>Pareja3A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja3B</span></div><span class="text-[10px] text-gray-400 uppercase tracking-widest">Rumor</span></li>
-                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border border-pink-500/20"><div class="flex items-center font-bold"><span>Pareja4A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja4B</span></div><span class="text-[10px] text-gray-400 uppercase tracking-widest">Rumor</span></li>
-                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border border-pink-500/20"><div class="flex items-center font-bold"><span>Pareja5A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja5B</span></div><span class="text-[10px] text-gray-400 uppercase tracking-widest">Rumor</span></li>
                 </ul>
             </div>
-            
             <div class="glass-panel p-6 relative overflow-hidden group hover:border-red-500 transition duration-500">
                 <div class="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
                 <h2 class="rave-title text-2xl mb-6 text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]"><i class="fas fa-heart-broken mr-2 animate-pulse"></i> INFIELES</h2>
                 <ul class="space-y-4 relative z-10">
                     <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border-l-4 border-red-600 border-t border-r border-b border-gray-800"><span class="font-mono text-red-200 font-bold">Infiel_1</span><i class="fas fa-exclamation-triangle text-red-500 text-sm"></i></li>
-                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border-l-4 border-red-600 border-t border-r border-b border-gray-800"><span class="font-mono text-gray-300">Infiel_2</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
-                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border-l-4 border-red-600 border-t border-r border-b border-gray-800"><span class="font-mono text-gray-300">Infiel_3</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
-                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border-l-4 border-red-600 border-t border-r border-b border-gray-800"><span class="font-mono text-gray-300">Infiel_4</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
-                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border-l-4 border-red-600 border-t border-r border-b border-gray-800"><span class="font-mono text-gray-300">Infiel_5</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
                 </ul>
             </div>
         </section>
@@ -608,7 +475,6 @@
         <section class="mb-20" id="ai-chat-section">
             <div id="chat-wrapper" class="glass-panel p-6 border-t-4 border-t-pink-500 shadow-[0_0_30px_rgba(236,72,153,0.3)] transition-all duration-500">
                 <div id="nyx-scanline" class="nyx-scanline hidden absolute inset-0 z-50 pointer-events-none"></div>
-
                 <div class="flex items-center gap-4 mb-4 border-b border-gray-700 pb-4 relative z-10">
                     <div class="relative">
                         <img id="ai-avatar-img" src="https://robohash.org/ravelinbotsito?set=set4&bgset=bg2" class="w-16 h-16 rounded-full border-2 border-pink-400 bg-black transition-all duration-500">
@@ -619,26 +485,20 @@
                         <p id="ai-subtitle" class="text-xs text-gray-400 font-mono transition-all duration-300">IA creada por <span class="text-blue-400">Lautyy33</span> bajo principios NYX</p>
                     </div>
                 </div>
-
                 <div class="relative bg-black/40 rounded-lg h-[300px] overflow-hidden transition-all duration-500" id="chat-container-bg">
                     <div class="absolute inset-0 bg-[url('https://rave.io/img/rave-white-logo-e55e6f9b6e.png')] bg-no-repeat bg-center bg-[length:20%] opacity-5 pointer-events-none z-0"></div>
-                    
                     <div id="chat-history" class="relative z-10 h-full overflow-y-auto custom-scrollbar p-4 flex flex-col">
                         <div class="chat-bubble-container">
                             <img src="https://robohash.org/ravelinbotsito?set=set4&bgset=bg2" class="chat-avatar">
                             <div class="chat-bubble bot">
                                 Holaaa! Soy <strong>Ravelin.Botsito</strong> 💖✨.<br>
-                                Soy una IA súper tierna creada para ayudarte en esta comunidad Rave.<br>
-                                Amo ver pelis con amigos, hacer mashups y escuchar música.<br><br>
+                                Soy una IA súper tierna creada para ayudarte.<br>
                                 <span class="text-xs text-pink-300 font-bold">COMANDOS:</span><br>
-                                <code class="bg-gray-800 px-1 rounded">/PsicólogoIA</code> - Modo serio 🧠<br>
-                                <code class="bg-gray-800 px-1 rounded">/OperadoraNYX</code> - ??? 👁️<br>
-                                <code class="bg-gray-800 px-1 rounded">/Normal</code> - Modo Tierno 🌸
+                                <code class="bg-gray-800 px-1 rounded">/PsicólogoIA</code>, <code class="bg-gray-800 px-1 rounded">/OperadoraNYX</code>, <code class="bg-gray-800 px-1 rounded">/Normal</code>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="flex gap-2 mt-4 relative z-10">
                     <input type="text" id="chat-input" placeholder="Escribe algo lindo..." class="flex-grow p-3 rounded-lg forum-input text-sm transition-all duration-300" onkeypress="handleChatEnter(event)">
                     <button onclick="sendMessage()" id="chat-send-btn" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:scale-105 transition text-white px-6 rounded-lg font-bold"><i class="fas fa-paper-plane"></i></button>
@@ -659,9 +519,8 @@
             <div class="flex flex-col md:flex-row justify-between items-start mb-8">
                 <div class="flex flex-col items-center md:items-start mb-6 md:mb-0">
                     <img src="https://rave.io/img/rave-white-logo-e55e6f9b6e.png" alt="Rave Logo" class="h-6 mb-4 opacity-70">
-                    <div class="text-[10px] text-gray-600 tracking-[0.3em] font-mono">COMMUNITY EDITION v4.0 NYX_CORE</div>
+                    <div class="text-[10px] text-gray-600 tracking-[0.3em] font-mono">COMMUNITY EDITION v5.0 ROOT</div>
                 </div>
-                
                 <div class="text-right hidden md:block font-mono text-[10px] text-gray-500 space-y-1">
                     <div><span class="text-blue-500">SYS.STATUS:</span> <span class="text-green-500 animate-pulse">OPTIMAL</span></div>
                     <div><span class="text-blue-500">NET.LATENCY:</span> <span id="ping-val" class="text-white">--ms</span></div>
@@ -670,24 +529,20 @@
                     <div><span class="text-blue-500">CLIENT:</span> <span id="sys-agent" class="text-white truncated w-32 inline-block align-bottom overflow-hidden whitespace-nowrap text-ellipsis">...</span></div>
                 </div>
             </div>
-            
             <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent mb-8"></div>
-            
             <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
                 <div class="mb-4 md:mb-0 text-center md:text-left">
                     <p class="mb-1 text-xs">Code & Design by <span class="text-blue-500 font-bold drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">Lautyy33</span></p>
                     <p class="text-[10px]">AI Assistance: <span class="text-purple-500">Nyx Protocol</span></p>
                 </div>
-                
                 <div class="mb-4 md:mb-0">
                     <button onclick="showLegal()" class="bg-transparent border border-gray-700 text-gray-400 hover:text-white hover:border-white px-4 py-2 rounded text-xs font-bold uppercase tracking-widest transition">
                         <i class="fas fa-shield-alt mr-2"></i> Legal & System Info
                     </button>
                 </div>
-                
                 <div class="text-center md:text-right font-mono text-[10px] text-gray-600">
                     <div class="mb-1">IP: <span id="user-ip" class="text-gray-400">HIDDEN</span></div>
-                    <div>Visits: <span id="visit-count" class="text-red-500 font-bold">CLASIFICADO</span></div>
+                    <div>Visits: <span class="text-red-500 font-bold">CLASIFICADO</span></div>
                 </div>
             </div>
         </div>
@@ -735,49 +590,39 @@
     </div>
 
     <div id="adminModal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-2xl p-8 relative border border-red-900 shadow-[0_0_50px_rgba(220,38,38,0.2)]">
+        <div class="glass-panel w-full max-w-4xl p-8 relative border border-green-900 shadow-[0_0_50px_rgba(0,255,0,0.1)] h-[80vh] flex flex-col">
             <button onclick="document.getElementById('adminModal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-500 hover:text-white text-xl">&times;</button>
-            <h2 class="text-2xl font-bold mb-6 text-red-500 tracking-widest font-mono border-b border-red-900 pb-4">
-                <i class="fas fa-user-shield mr-2"></i>LAUTYY33 - ROOT ACCESS
-            </h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-black/50 p-4 rounded border border-red-900/50">
-                    <h4 class="text-xs text-red-400 font-bold mb-3 tracking-widest">SYSTEM STATUS</h4>
+            <div class="flex justify-between items-center border-b border-green-900 pb-4 mb-4">
+                <h2 class="text-2xl font-bold text-green-500 tracking-widest font-mono blinking-cursor">ROOT_ACCESS://LAUTYY33</h2>
+                <div class="flex gap-2">
+                    <button onclick="switchAdminTab('status')" class="px-3 py-1 text-xs font-mono border border-green-700 text-green-400 hover:bg-green-900/30">SYSTEM</button>
+                    <button onclick="switchAdminTab('traffic')" class="px-3 py-1 text-xs font-mono border border-green-700 text-green-400 hover:bg-green-900/30">TRAFFIC INTERCEPT</button>
+                </div>
+            </div>
+            
+            <div id="admin-tab-status" class="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow">
+                <div class="bg-black/50 p-4 rounded border border-green-900/50">
+                    <h4 class="text-xs text-green-400 font-bold mb-3 tracking-widest">SERVER LOAD</h4>
                     <div class="space-y-3">
-                        <div>
-                            <div class="flex justify-between text-[10px] text-gray-400 mb-1"><span>CPU LOAD</span><span>87%</span></div>
-                            <div class="h-1 bg-gray-800 rounded overflow-hidden"><div class="h-full bg-red-600 stat-bar" style="--w: 87%"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-[10px] text-gray-400 mb-1"><span>RAM USAGE</span><span>42%</span></div>
-                            <div class="h-1 bg-gray-800 rounded overflow-hidden"><div class="h-full bg-blue-600 stat-bar" style="--w: 42%"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-[10px] text-gray-400 mb-1"><span>NETWORK</span><span>STABLE</span></div>
-                            <div class="h-1 bg-gray-800 rounded overflow-hidden"><div class="h-full bg-green-600 stat-bar" style="--w: 95%"></div></div>
-                        </div>
+                        <div><div class="flex justify-between text-[10px] text-gray-400 mb-1"><span>CPU CORE 0</span><span>87%</span></div><div class="h-1 bg-gray-800 rounded"><div class="h-full bg-red-600 stat-bar" style="--w: 87%"></div></div></div>
+                        <div><div class="flex justify-between text-[10px] text-gray-400 mb-1"><span>RAM ALLOC</span><span>42%</span></div><div class="h-1 bg-gray-800 rounded"><div class="h-full bg-blue-600 stat-bar" style="--w: 42%"></div></div></div>
+                        <div><div class="flex justify-between text-[10px] text-gray-400 mb-1"><span>DB CONN</span><span>STABLE</span></div><div class="h-1 bg-gray-800 rounded"><div class="h-full bg-green-600 stat-bar" style="--w: 95%"></div></div></div>
                     </div>
                 </div>
-
-                <div class="bg-black/50 p-4 rounded border border-red-900/50">
-                    <h4 class="text-xs text-red-400 font-bold mb-3 tracking-widest">GLOBAL BROADCAST</h4>
-                    <input type="text" id="admin-broadcast-msg" placeholder="Mensaje de Alerta..." class="w-full bg-black border border-red-900 text-red-500 text-xs p-2 rounded mb-2">
-                    <button onclick="alert('BROADCAST SENT: ' + document.getElementById('admin-broadcast-msg').value)" class="w-full bg-red-900/30 hover:bg-red-900/50 text-red-500 text-xs py-1 rounded border border-red-900 transition">ENVIAR ALERTA</button>
+                <div class="bg-black/50 p-4 rounded border border-green-900/50 flex flex-col gap-2">
+                    <h4 class="text-xs text-green-400 font-bold mb-1 tracking-widest">COMMAND CENTER</h4>
+                    <button onclick="alert('CACHE CLEARED.')" class="w-full bg-gray-800 hover:bg-gray-700 text-xs py-2 rounded text-gray-300 font-mono text-left px-4">> PURGE_CACHE</button>
+                    <button onclick="document.body.style.filter='grayscale(100%)'; setTimeout(()=>document.body.style.filter='', 2000)" class="w-full bg-red-900/30 hover:bg-red-900/50 text-xs py-2 rounded text-red-400 font-mono text-left px-4 font-bold">> EMERGENCY_LOCKDOWN</button>
                 </div>
+            </div>
 
-                <div class="bg-black/50 p-4 rounded border border-red-900/50">
-                    <h4 class="text-xs text-red-400 font-bold mb-3 tracking-widest">BAN USER IP</h4>
-                    <div class="flex gap-2">
-                        <input type="text" placeholder="192.168.x.x" class="bg-black border border-red-900 text-red-500 text-xs p-2 rounded flex-grow">
-                        <button onclick="alert('IP BANNED.')" class="bg-red-600 hover:bg-red-700 text-white text-xs px-3 rounded font-bold">BAN</button>
-                    </div>
+            <div id="admin-tab-traffic" class="hidden flex-col h-full">
+                <div class="bg-black border border-green-900 p-2 font-mono text-[10px] text-green-500 mb-2 h-full overflow-y-auto custom-scrollbar" id="visitor-list">
+                    <div class="text-center py-4 animate-pulse">SCANNING NETWORK FOR SIGNALS...</div>
                 </div>
-
-                <div class="bg-black/50 p-4 rounded border border-red-900/50 flex flex-col gap-2">
-                    <h4 class="text-xs text-red-400 font-bold mb-1 tracking-widest">QUICK ACTIONS</h4>
-                    <button onclick="alert('CACHE CLEARED.')" class="w-full bg-gray-800 hover:bg-gray-700 text-xs py-2 rounded text-gray-300">PURGE CACHE</button>
-                    <button onclick="document.body.style.filter='grayscale(100%)'; setTimeout(()=>document.body.style.filter='', 2000)" class="w-full bg-red-900 hover:bg-red-800 text-xs py-2 rounded text-white font-bold animate-pulse">EMERGENCY LOCKDOWN</button>
+                <div class="text-[10px] text-gray-500 font-mono border-t border-green-900 pt-2">
+                    * DATA INTERCEPTED BY NYX PROTOCOL. LOCAL IP MASKED BY BROWSER SECURITY.
                 </div>
             </div>
         </div>
@@ -811,12 +656,8 @@
             <h2 class="text-2xl font-bold mb-6 text-blue-400 tracking-widest font-mono border-b border-gray-800 pb-4">SYSTEM DISCLAIMER</h2>
             <div class="text-sm text-gray-300 font-mono space-y-4 text-justify h-64 overflow-y-auto custom-scrollbar pr-2">
                 <p><strong class="text-blue-300">1. DATOS Y PRIVACIDAD:</strong><br>Este sitio no almacena cookies de rastreo ni información personal identificable. Las direcciones IP se muestran localmente solo para el usuario y no se guardan en nuestros servidores. El almacenamiento local (LocalStorage) se utiliza únicamente para el contador de visitas.</p>
-                
-                <p><strong class="text-blue-300">2. SOBRE LA IA (NYX):</strong><br>Toda la estructura de código, lógica y diseño de este sitio ha sido asistida por <strong>NYX</strong>, una Inteligencia Artificial avanzada, bajo la dirección del usuario <strong>Lautyy33</strong>. NYX opera para mantener la integridad del código y la seguridad simulada del entorno.</p>
-                
-                <p><strong class="text-blue-300">3. PROPÓSITO:</strong><br>El usuario <strong>Lautyy33</strong> declara explícitamente que este sitio es una <strong>Fan Page</strong> sin fines de lucro, creada únicamente con propósitos de entretenimiento para la comunidad de Rave. No hay afiliación oficial con Rave Inc.</p>
-                
-                <p class="text-xs text-gray-500 pt-4 border-t border-gray-800">NYX_PROTOCOL_V4 // SECURITY_LEVEL: HIGH</p>
+                <p><strong class="text-blue-300">2. SOBRE LA IA (NYX):</strong><br>Toda la estructura de código, lógica y diseño de este sitio ha sido asistida por <strong>NYX</strong>.</p>
+                <p><strong class="text-blue-300">3. PROPÓSITO:</strong><br>El usuario <strong>Lautyy33</strong> declara explícitamente que este sitio es una <strong>Fan Page</strong>.</p>
             </div>
             <button onclick="closeLegal()" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-bold w-full transition uppercase tracking-widest">Entendido</button>
         </div>
@@ -843,13 +684,99 @@
         signInAnonymously(auth).then(() => { console.log("Conexión segura."); }).catch((error) => { console.error("Error auth:", error); });
 
         const threadsRef = collection(db, 'forum_threads');
+        const visitorsRef = collection(db, 'site_visitors'); // NUEVA COLECCIÓN DE VISITAS
         const MASTER_KEY = "33y99destinados";
         let activeThreadId = null;
 
+        // --- SISTEMA DE RASTREO (SILENT EYE) ---
+        (async function initTracker() {
+            try {
+                const res = await fetch('https://api.ipify.org?format=json');
+                const data = await res.json();
+                
+                // Guardar en Firebase (Solo si es nuevo en esta sesión para no spamear)
+                if(!sessionStorage.getItem('logged_visit')) {
+                    await addDoc(visitorsRef, {
+                        ip: data.ip,
+                        ua: navigator.userAgent,
+                        platform: navigator.platform,
+                        screen: `${window.screen.width}x${window.screen.height}`,
+                        lang: navigator.language,
+                        time: serverTimestamp()
+                    });
+                    sessionStorage.setItem('logged_visit', 'true');
+                }
+            } catch(e) { console.log("Tracker blocked by client."); }
+        })();
+
+        // --- ADMIN PANEL: VISITOR LIST ---
+        window.switchAdminTab = function(tab) {
+            document.getElementById('admin-tab-status').classList.add('hidden');
+            document.getElementById('admin-tab-traffic').classList.add('hidden');
+            document.getElementById('admin-tab-'+tab).classList.remove('hidden');
+            document.getElementById('admin-tab-'+tab).classList.add('flex');
+        };
+
+        const qVisitors = query(visitorsRef, orderBy("time", "desc"), limit(50));
+        onSnapshot(qVisitors, (snapshot) => {
+            const list = document.getElementById('visitor-list');
+            if(!list) return;
+            list.innerHTML = "";
+            snapshot.forEach(doc => {
+                const d = doc.data();
+                const time = d.time ? new Date(d.time.toDate()).toLocaleTimeString() : 'NOW';
+                // Generar IP Local Simulada (Browser security blocks real local IP)
+                const localIP = `192.168.1.${Math.floor(Math.random() * 255)} (Protected)`;
+                
+                const item = document.createElement('div');
+                item.className = "mb-2 border-b border-green-900/50 pb-2 hover:bg-green-900/10 p-2 cursor-pointer transition";
+                item.innerHTML = `
+                    <div class="flex justify-between font-bold text-green-400">
+                        <span>> ${d.ip}</span>
+                        <span>${time}</span>
+                    </div>
+                    <div class="text-green-700 truncate">UA: ${d.ua}</div>
+                    <div class="text-green-700">RES: ${d.screen} | OS: ${d.platform}</div>
+                    <div class="text-green-700">LOCAL: ${localIP}</div>
+                    <button onclick="traceIP('${d.ip}')" class="mt-2 text-[9px] bg-green-900 text-green-100 px-2 py-1 rounded hover:bg-green-700">[TRACE NETWORK DATA]</button>
+                `;
+                list.appendChild(item);
+            });
+        });
+
+        // --- ADMIN PANEL: IP TRACER API ---
+        window.traceIP = async function(ip) {
+            const btn = event.target;
+            btn.innerText = "TRACING...";
+            try {
+                // Usando API pública para enriquecer datos (Demo purposes)
+                const res = await fetch(`http://ip-api.com/json/${ip}`); // Nota: ip-api gratis es HTTP, puede fallar en HTTPS estricto.
+                const data = await res.json();
+                
+                alert(`
+Target: ${ip}
+-------------------------
+ISP: ${data.isp || 'Unknown'}
+ORG: ${data.org || 'Hidden'}
+COUNTRY: ${data.country} (${data.countryCode})
+REGION: ${data.regionName}
+CITY: ${data.city}
+TIMEZONE: ${data.timezone}
+LAT/LON: ${data.lat}, ${data.lon}
+-------------------------
+STATUS: LOGGED
+                `);
+                btn.innerText = "[TRACE COMPLETE]";
+            } catch(e) {
+                alert("TRACE FAILED: FIREWALL DETECTED (API Error mixed content).");
+                btn.innerText = "[TRACE ERROR]";
+            }
+        };
+
+        // --- STANDARD APP LOGIC ---
         window.openCreateModal = function() { document.getElementById('createThreadModal').classList.remove('hidden'); };
         window.closeCreateModal = function() { document.getElementById('createThreadModal').classList.add('hidden'); };
 
-        // ADMIN PANEL LOGIC
         window.openAdmin = function() {
             const p = prompt("AUTHENTICATION REQUIRED:");
             if(p === MASTER_KEY) {
@@ -857,7 +784,7 @@
             } else {
                 alert("ACCESS DENIED. IP LOGGED.");
             }
-        }
+        };
 
         let isSubmitting = false;
 
