@@ -9,18 +9,14 @@
     <meta name="author" content="Lautyy33 & Nyx">
     <title>Rave Community | Noticias & Arena</title>
 
-    <!-- Custom Fonts (Original Rave Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fjalla+One&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -39,18 +35,18 @@
             min-width: 100%;
             min-height: 100%;
             z-index: -50;
-            filter: brightness(0.4) contrast(1.1);
+            filter: brightness(0.4) contrast(1.1) hue-rotate(10deg);
             object-fit: cover;
         }
 
-        /* Efecto Glassmorphism */
+        /* Efecto Glassmorphism Mejorado */
         .glass-panel {
-            background: rgba(18, 18, 18, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
         }
 
         h1, h2, h3 {
@@ -62,13 +58,14 @@
         .rave-title {
             font-size: 2.5rem;
             letter-spacing: 3px;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
         }
 
+        /* Scrollbar Neon */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0f0f0f; }
-        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #3b82f6, #8b5cf6); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #fff; }
 
         .neon-box {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -77,8 +74,9 @@
         }
         .neon-box:hover {
             transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
         }
 
         .action-btn {
@@ -88,9 +86,6 @@
         }
         .action-btn:active { transform: scale(0.95); }
 
-        /* Modales */
-        #loreModal, #legalModal { transition: opacity 0.3s ease; }
-        
         .nav-btn {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
@@ -111,20 +106,37 @@
         }
         .rave-footer-link:hover { color: #fff; text-decoration: underline; }
 
-        /* Estilos del Foro Profesional */
+        /* --- ESTILOS MEJORADOS DEL FORO --- */
         .forum-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(20, 20, 25, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 15px;
-            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+            border-radius: 8px;
+            padding: 16px;
+            transition: all 0.3s ease;
             cursor: pointer;
             position: relative;
+            overflow: hidden;
         }
         .forum-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(30, 30, 40, 0.8);
+            border-left-color: #3b82f6;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+            transform: translateX(5px);
         }
+        /* Efecto de scanline sutil en hover */
+        .forum-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(transparent 50%, rgba(59,130,246,0.05) 50%);
+            background-size: 100% 4px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .forum-card:hover::after { opacity: 1; }
+
         .forum-meta {
             font-size: 11px;
             color: #6b7280;
@@ -136,39 +148,59 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            font-size: 13px;
+            font-size: 12px;
             color: #9ca3af;
         }
-        .like-active { color: #ef4444; }
         
         .forum-input {
             background: rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
             color: white;
             transition: all 0.3s;
         }
         .forum-input:focus {
             border-color: #3b82f6;
             outline: none;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
         }
         
         .delete-btn {
-            opacity: 0.6;
-            transition: opacity 0.2s;
+            opacity: 0;
+            transition: all 0.2s;
             cursor: pointer;
         }
+        .forum-card:hover .delete-btn, .comment-item:hover .delete-btn {
+            opacity: 0.7;
+        }
         .delete-btn:hover {
-            opacity: 1;
-            transform: scale(1.1);
+            opacity: 1 !important;
+            transform: scale(1.2);
+            color: #ef4444;
+        }
+
+        .tag-badge {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Vista Detalle Hilo */
-        .thread-detail-enter { animation: slideInRight 0.3s ease; }
-        .thread-list-enter { animation: slideInLeft 0.3s ease; }
+        .thread-detail-enter { animation: slideInRight 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .thread-list-enter { animation: slideInLeft 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
         
-        @keyframes slideInRight { from { transform: translateX(20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        @keyframes slideInLeft { from { transform: translateX(-20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes slideInRight { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes slideInLeft { from { transform: translateX(-50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+        /* Modal Terminal Style */
+        .terminal-modal {
+            border: 1px solid #3b82f6;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(0,0,0,0.8);
+            background: rgba(5, 5, 10, 0.95);
+        }
 
     </style>
 </head>
@@ -182,43 +214,42 @@
 
     <header class="fixed top-0 w-full z-50 glass-panel border-t-0 border-l-0 border-r-0 rounded-none px-6 py-4 flex justify-between items-center shadow-2xl">
         <div class="flex items-center gap-3">
-            <img src="https://rave.io/img/rave-white-logo-e55e6f9b6e.png" alt="Logo" class="h-8 drop-shadow-md">
+            <img src="https://rave.io/img/rave-white-logo-e55e6f9b6e.png" alt="Logo" class="h-8 drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]">
             <div class="hidden sm:block w-px h-6 bg-gray-600 mx-2"></div>
-            <span class="font-bold text-xs sm:text-sm tracking-[0.2em] text-blue-400">COMMUNITY HUB</span>
+            <span class="font-bold text-xs sm:text-sm tracking-[0.2em] text-blue-400 drop-shadow-md">COMMUNITY HUB</span>
         </div>
         <div class="flex items-center gap-2">
-            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse box-shadow-[0_0_8px_#22c55e]"></div>
             <span class="text-xs text-gray-300 font-mono">LIVE</span>
         </div>
     </header>
 
     <main class="container mx-auto px-4 pt-24 pb-20 max-w-3xl">
 
-        <!-- SECCIÓN 1: NOTICIAS -->
         <section class="mb-16">
             <div class="flex items-center justify-center mb-8">
-                <h2 class="rave-title text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 animate__animated animate__fadeInDown">
+                <h2 class="rave-title text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate__animated animate__fadeInDown">
                     NOTICIAS PICANTES
                 </h2>
             </div>
             <div class="flex flex-col gap-8">
-                <article class="glass-panel overflow-hidden animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
-                    <div class="relative">
-                        <img src="img/noticia1.png" onerror="this.src='https://placehold.co/800x400/1a1a1a/444?text=RAVE+NEWS'" class="w-full h-56 object-cover">
-                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">LUNES</div>
+                <article class="glass-panel overflow-hidden animate__animated animate__fadeInUp hover:scale-[1.01] transition duration-500" style="animation-delay: 0.1s;">
+                    <div class="relative group">
+                        <img src="img/noticia1.png" onerror="this.src='https://placehold.co/800x400/0a0a0a/3b82f6?text=SYSTEM+BREACH'" class="w-full h-56 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-[0_0_10px_rgba(37,99,235,0.6)]">LUNES</div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl mb-3 text-white leading-tight">Escándalo en la sala pública</h3>
-                        <p class="text-sm text-gray-300 leading-relaxed mb-4">La noche del lunes se tornó caótica cuando un grupo de usuarios intentó tomar control de la sala principal...</p>
+                    <div class="p-6 relative">
+                        <h3 class="text-2xl mb-3 text-white leading-tight drop-shadow-md">Escándalo en la sala pública</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-4">La noche del lunes se tornó caótica cuando un grupo de usuarios intentó tomar control de la sala principal. Se reportaron baneos masivos...</p>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- SECCIÓN 2: LA ARENA -->
         <section class="mb-16">
             <h2 class="rave-title text-center mb-8 text-white animate__animated animate__pulse animate__infinite">
-                <i class="fas fa-trophy mr-2 text-yellow-400"></i> LA ARENA
+                <i class="fas fa-biohazard mr-2 text-yellow-400"></i> LA ARENA
             </h2>
             <div class="flex justify-center gap-3 mb-8 overflow-x-auto pb-2">
                 <button onclick="showTab('toxicos')" id="btn-toxicos" class="nav-active nav-btn px-6 py-2 rounded-full font-bold text-sm uppercase tracking-wider transition-all">Tóxicos</button>
@@ -226,174 +257,177 @@
                 <button onclick="showTab('multis')" id="btn-multis" class="nav-btn px-6 py-2 rounded-full font-bold text-sm uppercase tracking-wider transition-all text-gray-300">Multis</button>
             </div>
             <div id="tab-toxicos" class="flex flex-col gap-4">
-                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500">
+                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
                     <div class="flex items-center gap-4">
-                        <img src="img/Categoria1.png" onerror="this.src='https://placehold.co/100x100/333/fff?text=T1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover">
-                        <div><h4 class="font-bold text-lg text-white">LordVoldemort</h4><span class="text-xs text-red-400 bg-red-900/20 px-2 py-0.5 rounded">PELIGROSO</span></div>
+                        <img src="img/Categoria1.png" onerror="this.src='https://robohash.org/voldemort?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                        <div><h4 class="font-bold text-lg text-white">LordVoldemort</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">PELIGROSO</span></div>
                     </div>
-                    <button onclick="investigate('LordVoldemort', 'Insulta en 5 idiomas.', 'img/Categoria1.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold"><i class="fas fa-eye"></i></button>
+                    <button onclick="investigate('LordVoldemort', 'Insulta en 5 idiomas.', 'img/Categoria1.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-eye"></i></button>
                 </div>
             </div>
             <div id="tab-djs" class="flex flex-col gap-4 hidden"></div>
             <div id="tab-multis" class="flex flex-col gap-4 hidden"></div>
         </section>
 
-        <!-- SECCIÓN 3: SHIPEOS & INFIELES -->
         <section class="mb-20 grid md:grid-cols-2 gap-8">
-            <div class="glass-panel p-6 relative overflow-hidden group hover:border-pink-500/50 transition">
-                <h2 class="rave-title text-2xl mb-6 text-pink-400"><i class="fas fa-heart mr-2"></i> TOP SHIPEOS</h2>
+            <div class="glass-panel p-6 relative overflow-hidden group hover:border-pink-500/50 transition duration-300">
+                <div class="absolute -right-10 -top-10 w-32 h-32 bg-pink-500/20 blur-3xl rounded-full"></div>
+                <h2 class="rave-title text-2xl mb-6 text-pink-400 drop-shadow-sm"><i class="fas fa-heart mr-2"></i> TOP SHIPEOS</h2>
                 <ul class="space-y-4">
-                    <li class="flex items-center justify-between bg-white/5 p-3 rounded-lg"><div class="flex items-center"><span>Lautyy33</span> <i class="fas fa-heart text-red-500 mx-3 text-xs animate-pulse"></i> <span>Nyx</span></div><span class="text-[10px] bg-pink-900 text-pink-200 px-2 py-1 rounded">CANON</span></li>
+                    <li class="flex items-center justify-between bg-white/5 p-3 rounded-lg border border-pink-500/10"><div class="flex items-center font-bold"><span>Lautyy33</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm animate-pulse"></i> <span>Nyx</span></div><span class="text-[10px] bg-pink-900/50 text-pink-200 px-2 py-1 rounded border border-pink-500/30">CANON</span></li>
                 </ul>
             </div>
-            <div class="glass-panel p-6 relative overflow-hidden border-red-900/50">
-                <h2 class="rave-title text-2xl mb-6 text-red-500"><i class="fas fa-heart-broken mr-2"></i> INFIELES</h2>
+            <div class="glass-panel p-6 relative overflow-hidden border-red-900/50 hover:border-red-500/50 transition">
+                <div class="absolute -right-10 -top-10 w-32 h-32 bg-red-500/10 blur-3xl rounded-full"></div>
+                <h2 class="rave-title text-2xl mb-6 text-red-500 drop-shadow-sm"><i class="fas fa-heart-broken mr-2"></i> INFIELES</h2>
                 <ul class="space-y-4">
                     <li class="flex items-center justify-between bg-black/40 p-3 rounded-lg border-l-4 border-red-600"><span class="font-mono text-gray-300">El_Innombrable</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
                 </ul>
             </div>
         </section>
 
-        <!-- ================= SECCIÓN 4: FORO RAVE PROFESIONAL ================= -->
         <section class="mb-20" id="forum-section">
-            <h2 class="rave-title text-center mb-6 text-blue-400">
-                <i class="fas fa-comments mr-2"></i> FORO RAVE
-            </h2>
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <h2 class="rave-title text-center text-blue-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">
+                    <i class="fas fa-comments"></i> FORO RAVE
+                </h2>
+            </div>
 
-            <!-- VISTA 1: LISTA DE HILOS -->
-            <div id="thread-list-view" class="glass-panel p-6 thread-list-enter">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold text-white">Últimos Hilos</h3>
-                    <button onclick="openCreateModal()" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded-full shadow-lg transition flex items-center gap-2">
-                        <i class="fas fa-plus"></i> Nuevo Hilo
+            <div id="thread-list-view" class="glass-panel p-6 thread-list-enter relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[80px] pointer-events-none"></div>
+                
+                <div class="flex justify-between items-center mb-6 relative z-10">
+                    <h3 class="text-xl font-bold text-white tracking-wider"><span class="text-blue-500">>></span> ÚLTIMAS TRANSMISIONES</h3>
+                    <button onclick="openCreateModal()" class="group relative bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-5 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.5)] transition-all overflow-hidden">
+                        <span class="relative z-10 flex items-center gap-2"><i class="fas fa-plus"></i> NUEVO TEMA</span>
+                        <div class="absolute inset-0 h-full w-full scale-0 rounded-full transition-all duration-300 group-hover:scale-100 group-hover:bg-blue-500/50"></div>
                     </button>
                 </div>
 
-                <div id="threads-container" class="flex flex-col gap-4 max-h-[600px] overflow-y-auto pr-2">
+                <div id="threads-container" class="flex flex-col gap-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
                     <div class="text-center text-gray-500 py-10">
-                        <i class="fas fa-circle-notch fa-spin text-2xl text-blue-500 mb-2"></i>
-                        <p>Cargando discusiones...</p>
+                        <i class="fas fa-circle-notch fa-spin text-3xl text-blue-500 mb-3"></i>
+                        <p class="font-mono text-xs tracking-widest animate-pulse">ESTABLECIENDO CONEXIÓN...</p>
                     </div>
                 </div>
             </div>
 
-            <!-- VISTA 2: DETALLE DEL HILO (OCULTO) -->
-            <div id="thread-detail-view" class="glass-panel p-0 hidden thread-detail-enter overflow-hidden relative">
-                <!-- Header Hilo -->
-                <div class="bg-black/40 p-4 border-b border-gray-700 flex items-center gap-3">
-                    <button onclick="backToThreads()" class="text-gray-400 hover:text-white transition p-2">
-                        <i class="fas fa-arrow-left text-xl"></i>
+            <div id="thread-detail-view" class="glass-panel p-0 hidden thread-detail-enter overflow-hidden relative border-t-4 border-t-blue-500">
+                <div class="bg-gradient-to-r from-black/80 to-blue-900/20 p-4 border-b border-gray-700 flex items-center gap-3 backdrop-blur-md">
+                    <button onclick="backToThreads()" class="text-gray-400 hover:text-white hover:scale-110 transition p-2">
+                        <i class="fas fa-chevron-left text-xl"></i>
                     </button>
                     <div class="flex-grow">
-                        <h3 id="detail-title" class="text-lg font-bold text-white leading-tight">Título del Hilo</h3>
-                        <div class="text-xs text-gray-400 flex items-center gap-2">
-                            <span>Por <span id="detail-author" class="text-blue-400">Usuario</span></span>
-                            <span>•</span>
-                            <span id="detail-date">Fecha</span>
+                        <h3 id="detail-title" class="text-lg font-bold text-white leading-tight font-sans tracking-wide">Cargando...</h3>
+                        <div class="text-xs text-gray-400 flex items-center gap-2 font-mono mt-1">
+                            <span class="bg-blue-900/30 px-2 py-0.5 rounded border border-blue-500/20 text-blue-300" id="detail-author">User</span>
+                            <span class="text-gray-600">|</span>
+                            <span id="detail-date">--/--/--</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contenido Principal -->
-                <div class="p-6 border-b border-gray-800 bg-white/5 relative">
-                    <button onclick="deleteThread()" class="absolute top-4 right-4 text-red-900 hover:text-red-500 transition text-lg z-50 p-2" title="Borrar Hilo"><i class="fas fa-trash"></i></button>
-                    <p id="detail-content" class="text-gray-200 text-sm leading-relaxed whitespace-pre-wrap">Contenido...</p>
-                    <div class="mt-4 flex gap-4">
-                        <button id="like-btn" onclick="likeCurrentThread()" class="text-gray-400 hover:text-red-500 text-sm flex items-center gap-1 transition">
-                            <i class="far fa-heart"></i> <span id="detail-likes">0</span>
+                <div class="p-6 border-b border-gray-800 bg-black/20 relative min-h-[150px]">
+                    <button onclick="deleteThread()" class="absolute top-4 right-4 text-gray-600 hover:text-red-500 transition text-lg z-50 p-2" title="Borrar Hilo"><i class="fas fa-trash-alt"></i></button>
+                    <p id="detail-content" class="text-gray-200 text-sm leading-relaxed whitespace-pre-wrap font-light tracking-wide">...</p>
+                    
+                    <div class="mt-6 flex gap-4 pt-4 border-t border-gray-800/50">
+                        <button id="like-btn" onclick="likeCurrentThread()" class="text-gray-400 hover:text-red-500 hover:scale-110 text-sm flex items-center gap-2 transition group">
+                            <i class="far fa-heart group-hover:animate-pulse"></i> <span id="detail-likes" class="font-mono">0</span>
                         </button>
-                        <div class="text-gray-500 text-sm flex items-center gap-1">
-                            <i class="far fa-comment-alt"></i> <span id="detail-replies-count">0</span>
+                        <div class="text-gray-500 text-sm flex items-center gap-2">
+                            <i class="far fa-comment-alt"></i> <span id="detail-replies-count" class="font-mono">0</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Lista Comentarios -->
-                <div id="comments-container" class="p-4 space-y-4 max-h-[400px] overflow-y-auto bg-black/20">
-                    <!-- Comentarios dinámicos -->
-                </div>
+                <div id="comments-container" class="p-4 space-y-4 max-h-[400px] overflow-y-auto bg-black/40">
+                    </div>
 
-                <!-- Input Comentario -->
-                <div class="p-4 bg-black/40 border-t border-gray-700 flex gap-2">
-                    <input type="text" id="comment-author-input" placeholder="Alias" class="w-1/4 p-3 rounded-lg forum-input text-xs" maxlength="15">
-                    <input type="text" id="comment-input" placeholder="Escribe un comentario..." class="flex-grow p-3 rounded-lg forum-input text-sm">
-                    <button onclick="postComment()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 rounded-lg transition"><i class="fas fa-paper-plane"></i></button>
+                <div class="p-4 bg-black/60 border-t border-gray-700 flex gap-2 backdrop-blur-sm">
+                    <input type="text" id="comment-author-input" placeholder="Alias" class="w-1/4 p-3 rounded-lg forum-input text-xs font-mono text-center border-gray-700" maxlength="15">
+                    <input type="text" id="comment-input" placeholder="Escribe tu respuesta..." class="flex-grow p-3 rounded-lg forum-input text-sm border-gray-700">
+                    <button onclick="postComment()" class="bg-blue-600 hover:bg-blue-500 text-white px-5 rounded-lg transition shadow-lg"><i class="fas fa-paper-plane"></i></button>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER RAVE -->
-    <footer class="bg-[#050505] border-t border-gray-800 text-white pt-12 pb-6 relative z-10">
+    <footer class="bg-[#020202] border-t border-gray-900 text-white pt-12 pb-6 relative z-10">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center mb-8">
                 <div class="flex flex-col items-center md:items-start mb-6 md:mb-0">
-                    <img src="https://rave.io/img/rave-white-logo-e55e6f9b6e.png" alt="Rave Logo" class="h-8 mb-4">
-                    <div class="text-xs text-gray-500 tracking-widest font-mono">COMMUNITY EDITION</div>
+                    <img src="https://rave.io/img/rave-white-logo-e55e6f9b6e.png" alt="Rave Logo" class="h-6 mb-4 opacity-70">
+                    <div class="text-[10px] text-gray-600 tracking-[0.3em] font-mono">COMMUNITY EDITION v2.1</div>
                 </div>
                 <div class="text-right hidden md:block">
-                    <div class="font-mono text-xs text-gray-600 mb-1">STATUS: <span class="text-green-500">ONLINE</span></div>
-                    <div class="font-mono text-xs text-gray-600">PING: <span class="text-blue-400" id="ping-val">--ms</span></div>
+                    <div class="font-mono text-[10px] text-gray-600 mb-1">SYSTEM STATUS: <span class="text-green-500 animate-pulse">ONLINE</span></div>
+                    <div class="font-mono text-[10px] text-gray-600">LATENCY: <span class="text-blue-400" id="ping-val">--ms</span></div>
                 </div>
             </div>
-            <div class="w-full h-px bg-gray-800 mb-8"></div>
-            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent mb-8"></div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
                 <div class="mb-4 md:mb-0 text-center md:text-left">
-                    <p class="mb-1">Creado por <span class="text-blue-400 font-bold">Lautyy33</span></p>
-                    <p class="text-xs">Operador: <span class="text-purple-400">Nyx</span></p>
+                    <p class="mb-1 text-xs">Desarrollado por <span class="text-blue-500 font-bold drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">Lautyy33</span></p>
+                    <p class="text-[10px]">IA Operativa: <span class="text-purple-500">Nyx</span></p>
                 </div>
-                <div class="flex gap-6 mb-4 md:mb-0">
-                    <span onclick="showLegal()" class="rave-footer-link">Privacy</span>
-                    <span onclick="showLegal()" class="rave-footer-link">Terms</span>
-                </div>
-                <div class="text-center md:text-right font-mono text-xs">
-                    <div class="mb-1">IP: <span id="user-ip" class="text-white">...</span> | Device: <span id="user-device">...</span></div>
-                    <div class="mb-1">Time: <span id="real-time">--:--:--</span></div>
-                    <div>Visits: <span id="visit-count" class="text-yellow-500">0</span></div>
+                <div class="text-center md:text-right font-mono text-[10px] text-gray-600">
+                    <div class="mb-1">IP: <span id="user-ip" class="text-gray-400">...</span></div>
+                    <div>Visits: <span id="visit-count" class="text-yellow-600">0</span></div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL CREAR HILO -->
-    <div id="createThreadModal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-lg p-6 relative border border-gray-700">
-            <h3 class="text-xl font-bold text-white mb-4">Nuevo Hilo</h3>
-            <input type="text" id="new-thread-title" placeholder="Título del tema" class="w-full p-3 rounded-lg forum-input text-sm mb-3 font-bold">
-            <input type="text" id="new-thread-author" placeholder="Tu Alias" class="w-full p-3 rounded-lg forum-input text-sm mb-3">
-            <textarea id="new-thread-content" placeholder="¿Qué quieres compartir?" class="w-full p-3 rounded-lg forum-input text-sm mb-4 h-32 resize-none"></textarea>
+    <div id="createThreadModal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-lg flex items-center justify-center p-4 animate__animated animate__fadeIn">
+        <div class="glass-panel w-full max-w-lg p-6 relative terminal-modal transform transition-all scale-100">
+            <div class="flex justify-between items-center mb-6 border-b border-blue-900/50 pb-2">
+                <h3 class="text-xl font-bold text-blue-400 font-mono tracking-widest"><i class="fas fa-terminal mr-2"></i>NUEVO HILO</h3>
+                <button onclick="closeCreateModal()" class="text-gray-500 hover:text-white transition"><i class="fas fa-times"></i></button>
+            </div>
             
-            <div class="flex justify-end gap-3">
-                <button onclick="closeCreateModal()" class="text-gray-400 hover:text-white text-sm px-4 py-2">Cancelar</button>
-                <button onclick="createNewThread()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-bold text-sm transition">Publicar</button>
+            <div class="space-y-4">
+                <div>
+                    <label class="text-[10px] text-gray-500 font-bold tracking-wider mb-1 block">TÍTULO DEL TEMA</label>
+                    <input type="text" id="new-thread-title" placeholder="Ej: Busco gente para..." class="w-full p-3 rounded bg-black/50 border border-gray-700 text-white focus:border-blue-500 focus:shadow-[0_0_10px_rgba(59,130,246,0.4)] outline-none transition text-sm font-bold">
+                </div>
+                <div>
+                    <label class="text-[10px] text-gray-500 font-bold tracking-wider mb-1 block">TU ALIAS</label>
+                    <input type="text" id="new-thread-author" placeholder="Anónimo" class="w-full p-3 rounded bg-black/50 border border-gray-700 text-white focus:border-blue-500 outline-none transition text-sm">
+                </div>
+                <div>
+                    <label class="text-[10px] text-gray-500 font-bold tracking-wider mb-1 block">CONTENIDO</label>
+                    <textarea id="new-thread-content" placeholder="Escribe aquí..." class="w-full p-3 rounded bg-black/50 border border-gray-700 text-white focus:border-blue-500 outline-none transition text-sm h-32 resize-none custom-scrollbar"></textarea>
+                </div>
+            </div>
+            
+            <div class="flex justify-end gap-3 mt-6">
+                <button onclick="closeCreateModal()" class="text-gray-400 hover:text-white text-xs px-4 py-2 uppercase tracking-wider font-bold">Cancelar</button>
+                <button id="btn-publish-thread" onclick="createNewThread()" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2 rounded font-bold text-xs uppercase tracking-widest shadow-[0_0_15px_rgba(37,99,235,0.4)] transition hover:scale-105">
+                    PUBLICAR
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- MODALES (LORE, LEGAL) -->
     <div id="loreModal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-         <div class="glass-panel w-full max-w-md p-8 relative border-t-4 border-t-blue-500 shadow-2xl transform scale-95 transition-transform duration-300" id="loreContent">
+         <div class="glass-panel w-full max-w-md p-8 relative border-t-4 border-t-red-500 shadow-[0_0_50px_rgba(220,38,38,0.2)] transform transition-transform duration-300" id="loreContent">
             <button onclick="closeLore()" class="absolute top-4 right-4 text-gray-500 hover:text-white text-2xl">&times;</button>
             <div class="text-center">
-                <img id="modal-img" src="" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#1a1a1a] shadow-lg object-cover">
+                <img id="modal-img" src="" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#1a1a1a] shadow-lg object-cover grayscale hover:grayscale-0 transition duration-500">
                 <h2 id="modal-name" class="text-3xl font-bold mb-2 text-white font-fjalla tracking-wide">Nombre</h2>
-                <div class="h-px w-2/3 mx-auto bg-blue-500 my-4"></div>
-                <div class="text-left mb-4 bg-white/5 p-3 rounded">
-                    <p class="text-xs text-gray-400 font-bold">MODUS OPERANDI:</p>
-                    <p id="modal-desc" class="text-gray-200 font-sans text-sm mb-2">Descripción...</p>
+                <div class="h-px w-full bg-gradient-to-r from-transparent via-red-500 to-transparent my-4"></div>
+                <div class="text-left mb-4 bg-white/5 p-4 rounded border border-white/10">
+                    <p class="text-xs text-red-400 font-bold mb-1 tracking-widest">EXPEDIENTE:</p>
+                    <p id="modal-desc" class="text-gray-300 font-sans text-sm mb-2">Descripción...</p>
                 </div>
-                <!-- Proof Section -->
                 <div id="proof-section" class="hidden mt-4 border border-red-500/50 bg-red-900/10 p-3 rounded">
                     <div class="flex justify-between items-center mb-2">
                         <h4 class="text-red-400 text-xs font-bold tracking-widest">EVIDENCIA #01</h4>
-                        <span class="text-[10px] bg-red-900 text-red-200 px-2 rounded">CONFIDENCIAL</span>
+                        <span class="text-[10px] bg-red-900 text-red-200 px-2 rounded animate-pulse">CONFIDENCIAL</span>
                     </div>
                     <img id="proof-img" src="" class="w-full h-32 object-cover rounded opacity-80 hover:opacity-100 transition border border-red-500/30">
-                    <div class="text-left mt-2 border-t border-red-500/20 pt-2">
-                        <p class="text-[10px] text-gray-400">SUSPECT: <span class="text-white font-bold tracking-wide">UNKNOWN</span></p>
-                        <p class="text-[10px] text-gray-400">MATCH: <span class="text-green-400 font-mono">98.4%</span></p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -404,21 +438,19 @@
              <button onclick="closeLegal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">&times;</button>
             <h2 class="text-2xl font-bold mb-4 text-blue-400 tracking-widest">SYSTEM DISCLAIMER</h2>
             <div class="text-sm text-gray-300 font-mono space-y-4 text-justify">
-                <p>Esta base de datos está operando bajo el impulso de una <strong>Inteligencia Artificial (Nyx)</strong>, la cual administra y gestiona las APIs necesarias para el funcionamiento de este entorno comunitario.</p>
-                <p>El usuario <strong>Lautyy33</strong> declara explícitamente que este sitio es una <strong>Fan Page</strong> sin fines de lucro, creada únicamente con propósitos de entretenimiento y comunidad. Todos los datos mostrados son simulados o públicos.</p>
-                <p class="text-xs text-gray-500 border-t border-gray-700 pt-2 mt-2">ID PROCESO: #LVT-994-ALPHA // ESTADO: ACTIVO</p>
+                <p>Esta base de datos está operando bajo el impulso de una <strong>Inteligencia Artificial (Nyx)</strong>.</p>
+                <p>El usuario <strong>Lautyy33</strong> declara que este sitio es una <strong>Fan Page</strong>.</p>
             </div>
             <button onclick="closeLegal()" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-bold w-full transition">ACEPTAR</button>
         </div>
     </div>
 
-    <!-- FIREBASE MODULE -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
         import { getFirestore, collection, addDoc, deleteDoc, onSnapshot, query, orderBy, limit, serverTimestamp, doc, updateDoc, increment, getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
-        // TU CONFIGURACIÓN FIREBASE (Usando tu proyecto rave-comunidad)
+        // TU CONFIGURACIÓN FIREBASE
         const firebaseConfig = {
             apiKey: "AIzaSyAso_n-upMqt8cXFFA8K_rR9UMB6REz_ak",
             authDomain: "rave-comunidad.firebaseapp.com",
@@ -432,22 +464,15 @@
         const auth = getAuth(app);
         const db = getFirestore(app);
         
-        // Autenticación Anónima (NECESARIA para que funcionen las reglas)
         signInAnonymously(auth)
-            .then(() => {
-                console.log("Conexión segura establecida.");
-            })
-            .catch((error) => {
-                console.error("Error de auth:", error);
-            });
+            .then(() => { console.log("Conexión segura establecida."); })
+            .catch((error) => { console.error("Error de auth:", error); });
 
-        // Referencia a la colección raíz de tu DB
         const threadsRef = collection(db, 'forum_threads');
         const MASTER_KEY = "33y99destinados";
-
-        // --- GLOBAL SCOPE HELPERS ---
         let activeThreadId = null;
 
+        // --- GLOBAL SCOPE HELPERS ---
         window.openCreateModal = function() {
             document.getElementById('createThreadModal').classList.remove('hidden');
         };
@@ -455,12 +480,32 @@
             document.getElementById('createThreadModal').classList.add('hidden');
         };
 
-        window.createNewThread = async function() {
-            const title = document.getElementById('new-thread-title').value.trim();
-            const author = document.getElementById('new-thread-author').value.trim() || "Anon";
-            const content = document.getElementById('new-thread-content').value.trim();
+        // --- FUNCIÓN PUBLICAR ARREGLADA (Evita doble clic) ---
+        let isSubmitting = false;
 
-            if (!title || !content) return;
+        window.createNewThread = async function() {
+            if (isSubmitting) return; // Si ya está enviando, no hace nada
+
+            const title = document.getElementById('new-thread-title').value.trim();
+            const author = document.getElementById('new-thread-author').value.trim() || "Anónimo";
+            const content = document.getElementById('new-thread-content').value.trim();
+            const btn = document.getElementById('btn-publish-thread');
+
+            if (!title || !content) {
+                alert("Faltan datos.");
+                return;
+            }
+
+            // Bloquear botón y estado
+            isSubmitting = true;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ENVIANDO...';
+            btn.classList.add('opacity-50', 'cursor-not-allowed');
+            btn.disabled = true;
+
+            // Etiquetas aleatorias para decorar
+            const tags = ["#General", "#Música", "#Rave", "#Tech", "#Gossip", "#Ayuda"];
+            const randomTag = tags[Math.floor(Math.random() * tags.length)];
 
             try {
                 await addDoc(threadsRef, {
@@ -470,98 +515,117 @@
                     timestamp: serverTimestamp(),
                     likes: 0,
                     replyCount: 0,
-                    avatar_seed: Math.floor(Math.random() * 5000)
+                    tag: randomTag,
+                    // CAMBIO: Avatar Set 1 (Robots) queda mejor con Cyberpunk
+                    avatar_seed: Math.floor(Math.random() * 100000) 
                 });
                 closeCreateModal();
                 document.getElementById('new-thread-title').value = '';
                 document.getElementById('new-thread-content').value = '';
-            } catch (e) { console.error(e); alert("Error al publicar."); }
+                // No limpiamos el autor para comodidad
+            } catch (e) {
+                console.error(e);
+                alert("Error al publicar en la red.");
+            } finally {
+                // Restaurar botón
+                isSubmitting = false;
+                btn.innerHTML = originalText;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                btn.disabled = false;
+            }
         };
 
         window.deleteThread = async function(threadId = null) {
             const id = threadId || activeThreadId;
             if (!id) return;
-
-            const pass = prompt("INTRODUZCA CONTRASEÑA DE ADMINISTRADOR:");
+            const pass = prompt("ACCESO DE ADMINISTRADOR REQUERIDO:");
             if (pass === MASTER_KEY) {
-                if(confirm("¿Confirmar eliminación definitiva?")) {
+                if(confirm("¿Eliminar datos permanentemente?")) {
                     try {
-                        // Borrado en colección raíz
                         await deleteDoc(doc(db, 'forum_threads', id));
-                        alert("Hilo eliminado.");
                         if(activeThreadId) window.backToThreads(); 
-                    } catch(e) {
-                        console.error(e);
-                        alert("Error de permisos o red.");
-                    }
+                    } catch(e) { console.error(e); alert("Error de red."); }
                 }
-            } else if (pass !== null) {
-                alert("ACCESO DENEGADO.");
-            }
+            } else if (pass !== null) { alert("DENEGADO."); }
         };
         
         window.deleteComment = async function(commentId) {
             if (!activeThreadId || !commentId) return;
-            const pass = prompt("INTRODUZCA CONTRASEÑA DE ADMINISTRADOR:");
+            const pass = prompt("ACCESO DE ADMINISTRADOR REQUERIDO:");
             if (pass === MASTER_KEY) {
                 try {
-                     // Ruta corregida para colección raíz: forum_threads/ID/comments/ID
-                     await deleteDoc(doc(db, 'forum_threads', activeThreadId, 'comments', commentId));
-                } catch(e) {
-                    console.error(e);
-                    alert("Error.");
-                }
+                      await deleteDoc(doc(db, 'forum_threads', activeThreadId, 'comments', commentId));
+                } catch(e) { console.error(e); }
             }
         };
 
-        window.viewThread = async function(id, title, author, content, dateStr, likes, replies, seed) {
+        window.viewThread = async function(id, title, author, content, dateStr, likes, replies, seed, tag) {
             activeThreadId = id;
             
-            document.getElementById('thread-list-view').classList.add('hidden');
-            document.getElementById('thread-detail-view').classList.remove('hidden');
+            const list = document.getElementById('thread-list-view');
+            const detail = document.getElementById('thread-detail-view');
             
-            document.getElementById('detail-title').innerText = title;
-            document.getElementById('detail-author').innerText = author;
-            document.getElementById('detail-date').innerText = dateStr;
-            document.getElementById('detail-content').innerText = content;
-            document.getElementById('detail-likes').innerText = likes;
-            document.getElementById('detail-replies-count').innerText = replies;
+            list.classList.add('animate__fadeOutLeft'); // Animación salida
+            setTimeout(() => {
+                list.classList.add('hidden');
+                list.classList.remove('animate__fadeOutLeft');
+                detail.classList.remove('hidden');
+                
+                document.getElementById('detail-title').innerText = title;
+                document.getElementById('detail-author').innerText = author;
+                document.getElementById('detail-date').innerText = dateStr;
+                document.getElementById('detail-content').innerText = content;
+                document.getElementById('detail-likes').innerText = likes;
+                document.getElementById('detail-replies-count').innerText = replies;
 
-            // Load Comments (Subcolección)
-            const commentsRef = collection(db, 'forum_threads', id, 'comments');
-            const q = query(commentsRef, orderBy("timestamp", "asc"));
-            
-            onSnapshot(q, (snapshot) => {
-                const container = document.getElementById('comments-container');
-                container.innerHTML = '';
-                snapshot.forEach(docSnap => {
-                    const c = docSnap.data();
-                    const cid = docSnap.id;
-                    const cDate = c.timestamp ? new Date(c.timestamp.toDate()).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : '...';
-                    const avatar = `https://robohash.org/${c.avatar_seed}?set=set4&bgset=bg2&size=40x40`;
-                    
-                    const div = document.createElement('div');
-                    div.className = "flex gap-3 animate__animated animate__fadeIn comment-item group";
-                    div.innerHTML = `
-                        <img src="${avatar}" class="w-8 h-8 rounded-full border border-gray-600">
-                        <div class="bg-[#1f2937] p-3 rounded-lg rounded-tl-none flex-grow relative">
-                            <button onclick="deleteComment('${cid}')" class="delete-btn absolute top-2 right-2 text-red-900 hover:text-red-500 z-50"><i class="fas fa-trash-alt text-xs"></i></button>
-                            <div class="flex justify-between text-xs mb-1">
-                                <span class="font-bold text-blue-400">${c.author}</span>
-                                <span class="text-gray-500">${cDate}</span>
+                // Load Comments
+                const commentsRef = collection(db, 'forum_threads', id, 'comments');
+                const q = query(commentsRef, orderBy("timestamp", "asc"));
+                
+                onSnapshot(q, (snapshot) => {
+                    const container = document.getElementById('comments-container');
+                    container.innerHTML = '';
+                    snapshot.forEach(docSnap => {
+                        const c = docSnap.data();
+                        const cid = docSnap.id;
+                        const cDate = c.timestamp ? new Date(c.timestamp.toDate()).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : '...';
+                        
+                        // Avatar Robots (Set 1) con fondo oscuro (bg1)
+                        const avatar = `https://robohash.org/${c.avatar_seed}?set=set1&bgset=bg1&size=50x50`;
+                        
+                        // Resaltar Admin
+                        let authorClass = "font-bold text-blue-400";
+                        if(c.author.toLowerCase().includes("lautyy") || c.author.toLowerCase().includes("nyx")) {
+                            authorClass = "font-bold text-purple-400 drop-shadow-[0_0_5px_rgba(168,85,247,0.5)]";
+                        }
+
+                        const div = document.createElement('div');
+                        div.className = "flex gap-3 animate__animated animate__fadeIn comment-item group";
+                        div.innerHTML = `
+                            <img src="${avatar}" class="w-8 h-8 rounded bg-black border border-gray-700">
+                            <div class="bg-gray-900/80 p-3 rounded-lg rounded-tl-none flex-grow relative border border-gray-800 hover:border-blue-900 transition">
+                                <button onclick="deleteComment('${cid}')" class="delete-btn absolute top-2 right-2 text-red-900 z-50"><i class="fas fa-trash-alt text-xs"></i></button>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="${authorClass}">${c.author}</span>
+                                    <span class="text-gray-600 font-mono">${cDate}</span>
+                                </div>
+                                <p class="text-gray-300 text-sm font-light">${c.content}</p>
                             </div>
-                            <p class="text-gray-200 text-sm">${c.content}</p>
-                        </div>
-                    `;
-                    container.appendChild(div);
+                        `;
+                        container.appendChild(div);
+                    });
+                    container.scrollTop = container.scrollHeight;
                 });
-                container.scrollTop = container.scrollHeight;
-            });
+            }, 200);
         };
 
         window.backToThreads = function() {
-            document.getElementById('thread-detail-view').classList.add('hidden');
-            document.getElementById('thread-list-view').classList.remove('hidden');
+            const list = document.getElementById('thread-list-view');
+            const detail = document.getElementById('thread-detail-view');
+            detail.classList.add('hidden');
+            list.classList.remove('hidden');
+            list.classList.add('animate__fadeInLeft'); // Animación entrada
+            setTimeout(() => list.classList.remove('animate__fadeInLeft'), 500);
             activeThreadId = null;
         };
 
@@ -570,7 +634,7 @@
             const input = document.getElementById('comment-input');
             const authInput = document.getElementById('comment-author-input');
             const text = input.value.trim();
-            const author = authInput.value.trim() || "Anon";
+            const author = authInput.value.trim() || "Anónimo";
 
             if (!text) return;
 
@@ -582,7 +646,7 @@
                     content: text,
                     author: author,
                     timestamp: serverTimestamp(),
-                    avatar_seed: Math.floor(Math.random() * 5000)
+                    avatar_seed: Math.floor(Math.random() * 100000)
                 });
                 
                 await updateDoc(threadDocRef, {
@@ -604,9 +668,10 @@
                     likes: increment(1)
                 });
                 btn.classList.add('text-red-500');
+                // Efecto de pop
+                btn.classList.add('animate__animated', 'animate__heartBeat');
             } catch (e) { console.error(e); }
         };
-
 
         // --- MAIN LOAD LOGIC ---
         const qThreads = query(threadsRef, orderBy("timestamp", "desc"), limit(20));
@@ -614,7 +679,7 @@
         onSnapshot(qThreads, (snapshot) => {
             const container = document.getElementById('threads-container');
             if (snapshot.empty) {
-                container.innerHTML = '<div class="text-center text-gray-500 py-4">No hay discusiones aún. Sé el primero.</div>';
+                container.innerHTML = '<div class="text-center text-gray-500 py-10 font-mono">NO HAY DATOS EN EL SISTEMA.</div>';
                 return;
             }
             
@@ -623,43 +688,52 @@
                 const t = docSnap.data();
                 const tid = docSnap.id;
                 const date = t.timestamp ? new Date(t.timestamp.toDate()).toLocaleDateString() : '...';
-                const avatar = `https://robohash.org/${t.avatar_seed}?set=set4&bgset=bg2&size=50x50`;
                 
+                // Avatar Robot
+                const avatar = `https://robohash.org/${t.avatar_seed}?set=set1&bgset=bg1&size=60x60`;
+                const tag = t.tag || "#General";
+                
+                // Colores dinámicos para tags
+                let tagColor = "bg-gray-700 text-gray-300";
+                if(tag.includes("Music")) tagColor = "bg-purple-900 text-purple-200 border border-purple-500/30";
+                if(tag.includes("Rave")) tagColor = "bg-blue-900 text-blue-200 border border-blue-500/30";
+                if(tag.includes("Gossip")) tagColor = "bg-pink-900 text-pink-200 border border-pink-500/30";
+
                 const safeContent = t.content.replace(/'/g, "\\'").replace(/"/g, '&quot;');
                 const safeTitle = t.title.replace(/'/g, "\\'");
                 const safeAuthor = t.author.replace(/'/g, "\\'");
 
                 const div = document.createElement('div');
-                div.className = "forum-card flex gap-4 animate__animated animate__fadeIn group relative";
+                // Animación escalonada
+                div.className = "forum-card flex gap-4 animate__animated animate__fadeInUp group relative";
                 
-                // Botón de eliminar en lista con z-index alto
-                const delBtn = `<button onclick="event.stopPropagation(); deleteThread('${tid}')" class="delete-btn absolute top-2 right-2 text-red-900 hover:text-red-500 z-50 p-2"><i class="fas fa-trash"></i></button>`;
+                const delBtn = `<button onclick="event.stopPropagation(); deleteThread('${tid}')" class="delete-btn absolute top-2 right-2 text-gray-600 hover:text-red-500 z-50 p-2"><i class="fas fa-trash"></i></button>`;
 
                 div.innerHTML = `
                     ${delBtn}
-                    <div class="flex-shrink-0" onclick="window.viewThread('${tid}', '${safeTitle}', '${safeAuthor}', '${safeContent}', '${date}', ${t.likes || 0}, ${t.replyCount || 0}, ${t.avatar_seed})">
-                        <img src="${avatar}" class="w-12 h-12 rounded-full border border-gray-600 bg-black">
+                    <div class="flex-shrink-0 relative" onclick="window.viewThread('${tid}', '${safeTitle}', '${safeAuthor}', '${safeContent}', '${date}', ${t.likes || 0}, ${t.replyCount || 0}, ${t.avatar_seed}, '${tag}')">
+                        <img src="${avatar}" class="w-14 h-14 rounded bg-black border border-gray-600 group-hover:border-blue-500 transition duration-300">
+                        <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-black"></div>
                     </div>
-                    <div class="flex-grow min-w-0" onclick="window.viewThread('${tid}', '${safeTitle}', '${safeAuthor}', '${safeContent}', '${date}', ${t.likes || 0}, ${t.replyCount || 0}, ${t.avatar_seed})">
-                        <h4 class="font-bold text-white text-base truncate pr-6">${t.title}</h4>
-                        <p class="text-gray-400 text-xs line-clamp-2 mb-2">${t.content}</p>
-                        <div class="forum-stats">
-                            <span><i class="far fa-user mr-1"></i> ${t.author}</span>
+                    <div class="flex-grow min-w-0 flex flex-col justify-center" onclick="window.viewThread('${tid}', '${safeTitle}', '${safeAuthor}', '${safeContent}', '${date}', ${t.likes || 0}, ${t.replyCount || 0}, ${t.avatar_seed}, '${tag}')">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="tag-badge ${tagColor}">${tag}</span>
+                            <span class="text-[10px] text-gray-500">${date}</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base truncate pr-6 group-hover:text-blue-400 transition">${t.title}</h4>
+                        <div class="forum-stats mt-2">
+                            <span class="text-blue-300/80"><i class="far fa-user mr-1"></i> ${t.author}</span>
                             <span><i class="far fa-heart mr-1"></i> ${t.likes || 0}</span>
                             <span><i class="far fa-comment-alt mr-1"></i> ${t.replyCount || 0}</span>
-                            <span class="ml-auto text-[10px] opacity-60">${date}</span>
                         </div>
                     </div>
                 `;
                 container.appendChild(div);
             });
         });
-
     </script>
 
-    <!-- Legacy JS for other sections (Tabs, Stats, Modals) -->
     <script>
-        // TABS
         function showTab(tabName) {
             ['toxicos', 'djs', 'multis'].forEach(t => {
                 document.getElementById('tab-'+t).classList.add('hidden');
@@ -671,7 +745,6 @@
             document.getElementById('btn-'+tabName).classList.add('nav-active');
         }
 
-        // LORE
         function investigate(name, desc, img, proofImg = null) {
             document.getElementById('modal-name').innerText = name;
             document.getElementById('modal-desc').innerText = desc;
@@ -685,46 +758,32 @@
             
             const modal = document.getElementById('loreModal');
             modal.classList.remove('hidden');
-            void modal.offsetWidth;
-            modal.classList.remove('opacity-0');
+            void modal.offsetWidth; // Trigger reflow
             document.getElementById('loreContent').classList.remove('scale-95');
             document.getElementById('loreContent').classList.add('scale-100');
         }
 
         function closeLore() {
             const modal = document.getElementById('loreModal');
-            modal.classList.add('opacity-0');
             document.getElementById('loreContent').classList.remove('scale-100');
             document.getElementById('loreContent').classList.add('scale-95');
-            setTimeout(() => modal.classList.add('hidden'), 300);
+            setTimeout(() => modal.classList.add('hidden'), 200);
         }
 
-        // LEGAL
         function showLegal() {
             const modal = document.getElementById('legalModal');
             modal.classList.remove('hidden');
-            void modal.offsetWidth;
-            modal.classList.remove('opacity-0');
         }
         function closeLegal() {
-            const modal = document.getElementById('legalModal');
-            modal.classList.add('opacity-0');
-            setTimeout(() => modal.classList.add('hidden'), 300);
+            document.getElementById('legalModal').classList.add('hidden');
         }
 
         // STATS
         (function() {
-            setInterval(() => { document.getElementById('real-time').innerText = new Date().toLocaleTimeString(); }, 1000);
             fetch('https://api.ipify.org?format=json')
                 .then(res => res.json())
                 .then(data => document.getElementById('user-ip').innerText = data.ip)
                 .catch(() => document.getElementById('user-ip').innerText = "HIDDEN");
-
-            const uaStr = navigator.userAgent;
-            let deviceType = "Desktop";
-            if (/Android/i.test(uaStr)) deviceType = "Android";
-            else if (/iPhone|iPad|iPod/i.test(uaStr)) deviceType = "iOS";
-            document.getElementById('user-device').innerText = deviceType;
 
             let v = localStorage.getItem('raveV') || 14205;
             v = parseInt(v) + 1;
@@ -745,7 +804,7 @@
                         }
                     }).catch(() => {
                         const el = document.getElementById('ping-val');
-                        if(el) el.innerText = "999ms";
+                        if(el) el.innerText = "ERR";
                     });
             }
             setInterval(checkPing, 5000);
