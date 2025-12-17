@@ -61,13 +61,11 @@
             text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
         }
 
-        /* SCROLLBAR */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #3b82f6, #8b5cf6); border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #fff; }
 
-        /* NEON BOX */
         .neon-box {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
@@ -228,7 +226,7 @@
             border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* --- MODO HACKER / NYX MEJORADO --- */
+        /* --- MODO HACKER / NYX --- */
         .nyx-mode-container {
             background-color: #000 !important;
             border: 1px solid #00ff00 !important;
@@ -237,7 +235,6 @@
             position: relative;
             overflow: hidden;
         }
-        /* Efecto CRT Scanline */
         .nyx-scanline::before {
             content: " ";
             display: block;
@@ -284,6 +281,10 @@
         .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
         @keyframes typing { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
+        /* Admin Panel Animations */
+        @keyframes barGrow { from { width: 0; } to { width: var(--w); } }
+        .stat-bar { animation: barGrow 1.5s ease-out forwards; }
+
     </style>
 </head>
 
@@ -308,6 +309,13 @@
 
     <main class="container mx-auto px-4 pt-24 pb-20 max-w-3xl">
 
+        <div class="text-center mb-16 pt-10 animate__animated animate__fadeInDown">
+            <img src="https://rave.io/img/rave-white-logo-e55e6f9b6e.png" class="h-20 mx-auto mb-6 drop-shadow-[0_0_20px_rgba(59,130,246,0.9)] hover:scale-105 transition duration-500">
+            <p class="text-gray-400 text-sm tracking-[0.2em] font-mono">
+                Creado por <span class="text-blue-400 font-bold drop-shadow-md">Lautyy33</span> <span class="mx-2">|</span> Colaboradora: <span class="text-purple-400 font-bold drop-shadow-md">Nyx IA</span>
+            </p>
+        </div>
+
         <section class="mb-16">
             <div class="flex items-center justify-center mb-8">
                 <h2 class="rave-title text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate__animated animate__fadeInDown">
@@ -322,7 +330,7 @@
                         <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">LUNES</div>
                     </div>
                     <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase">Próximamente...</h3>
+                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
                     </div>
                 </article>
 
@@ -332,7 +340,7 @@
                         <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MARTES</div>
                     </div>
                     <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase">Próximamente...</h3>
+                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
                     </div>
                 </article>
 
@@ -342,7 +350,7 @@
                         <div class="absolute top-4 left-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MIÉRCOLES</div>
                     </div>
                     <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase">Próximamente...</h3>
+                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
                     </div>
                 </article>
 
@@ -352,7 +360,7 @@
                         <div class="absolute top-4 left-4 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">JUEVES</div>
                     </div>
                     <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase">Próximamente...</h3>
+                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
                     </div>
                 </article>
 
@@ -362,7 +370,7 @@
                         <div class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">VIERNES</div>
                     </div>
                     <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase">Próximamente...</h3>
+                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
                     </div>
                 </article>
 
@@ -372,7 +380,7 @@
                         <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">SÁBADO</div>
                     </div>
                     <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase">Próximamente...</h3>
+                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
                     </div>
                 </article>
 
@@ -382,7 +390,7 @@
                         <div class="absolute top-4 left-4 bg-gray-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">DOMINGO</div>
                     </div>
                     <div class="p-8 min-h-[150px] flex items-center justify-center">
-                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase">Próximamente...</h3>
+                        <h3 class="text-3xl text-gray-500 font-bold tracking-widest uppercase animate-pulse">Próximamente...</h3>
                     </div>
                 </article>
             </div>
@@ -638,6 +646,12 @@
             </div>
         </section>
 
+        <section class="mb-20 text-center">
+            <button onclick="openAdmin()" class="bg-red-900/20 border border-red-500/50 text-red-400 px-8 py-3 rounded-lg font-mono text-xs tracking-[0.2em] hover:bg-red-900/40 hover:scale-105 transition shadow-[0_0_20px_rgba(220,38,38,0.2)]">
+                <i class="fas fa-lock mr-2"></i> PANEL DE ADMINISTRADOR
+            </button>
+        </section>
+
     </main>
 
     <footer class="bg-[#020202] border-t border-gray-900 text-white pt-12 pb-6 relative z-10">
@@ -673,7 +687,7 @@
                 
                 <div class="text-center md:text-right font-mono text-[10px] text-gray-600">
                     <div class="mb-1">IP: <span id="user-ip" class="text-gray-400">HIDDEN</span></div>
-                    <div>Visits: <span id="visit-count" class="text-yellow-600">0</span></div>
+                    <div>Visits: <span id="visit-count" class="text-red-500 font-bold">CLASIFICADO</span></div>
                 </div>
             </div>
         </div>
@@ -716,6 +730,55 @@
             <div class="flex justify-end gap-3 mt-6">
                 <button onclick="closeCreateModal()" class="text-gray-400 hover:text-white text-xs px-4 py-2 uppercase tracking-wider font-bold">Cancelar</button>
                 <button id="btn-publish-thread" onclick="createNewThread()" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2 rounded font-bold text-xs uppercase tracking-widest shadow-[0_0_15px_rgba(37,99,235,0.4)] transition hover:scale-105">PUBLICAR</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="adminModal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-2xl p-8 relative border border-red-900 shadow-[0_0_50px_rgba(220,38,38,0.2)]">
+            <button onclick="document.getElementById('adminModal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-500 hover:text-white text-xl">&times;</button>
+            <h2 class="text-2xl font-bold mb-6 text-red-500 tracking-widest font-mono border-b border-red-900 pb-4">
+                <i class="fas fa-user-shield mr-2"></i>LAUTYY33 - ROOT ACCESS
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-black/50 p-4 rounded border border-red-900/50">
+                    <h4 class="text-xs text-red-400 font-bold mb-3 tracking-widest">SYSTEM STATUS</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-[10px] text-gray-400 mb-1"><span>CPU LOAD</span><span>87%</span></div>
+                            <div class="h-1 bg-gray-800 rounded overflow-hidden"><div class="h-full bg-red-600 stat-bar" style="--w: 87%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[10px] text-gray-400 mb-1"><span>RAM USAGE</span><span>42%</span></div>
+                            <div class="h-1 bg-gray-800 rounded overflow-hidden"><div class="h-full bg-blue-600 stat-bar" style="--w: 42%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[10px] text-gray-400 mb-1"><span>NETWORK</span><span>STABLE</span></div>
+                            <div class="h-1 bg-gray-800 rounded overflow-hidden"><div class="h-full bg-green-600 stat-bar" style="--w: 95%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-black/50 p-4 rounded border border-red-900/50">
+                    <h4 class="text-xs text-red-400 font-bold mb-3 tracking-widest">GLOBAL BROADCAST</h4>
+                    <input type="text" id="admin-broadcast-msg" placeholder="Mensaje de Alerta..." class="w-full bg-black border border-red-900 text-red-500 text-xs p-2 rounded mb-2">
+                    <button onclick="alert('BROADCAST SENT: ' + document.getElementById('admin-broadcast-msg').value)" class="w-full bg-red-900/30 hover:bg-red-900/50 text-red-500 text-xs py-1 rounded border border-red-900 transition">ENVIAR ALERTA</button>
+                </div>
+
+                <div class="bg-black/50 p-4 rounded border border-red-900/50">
+                    <h4 class="text-xs text-red-400 font-bold mb-3 tracking-widest">BAN USER IP</h4>
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="192.168.x.x" class="bg-black border border-red-900 text-red-500 text-xs p-2 rounded flex-grow">
+                        <button onclick="alert('IP BANNED.')" class="bg-red-600 hover:bg-red-700 text-white text-xs px-3 rounded font-bold">BAN</button>
+                    </div>
+                </div>
+
+                <div class="bg-black/50 p-4 rounded border border-red-900/50 flex flex-col gap-2">
+                    <h4 class="text-xs text-red-400 font-bold mb-1 tracking-widest">QUICK ACTIONS</h4>
+                    <button onclick="alert('CACHE CLEARED.')" class="w-full bg-gray-800 hover:bg-gray-700 text-xs py-2 rounded text-gray-300">PURGE CACHE</button>
+                    <button onclick="document.body.style.filter='grayscale(100%)'; setTimeout(()=>document.body.style.filter='', 2000)" class="w-full bg-red-900 hover:bg-red-800 text-xs py-2 rounded text-white font-bold animate-pulse">EMERGENCY LOCKDOWN</button>
+                </div>
             </div>
         </div>
     </div>
@@ -785,6 +848,16 @@
 
         window.openCreateModal = function() { document.getElementById('createThreadModal').classList.remove('hidden'); };
         window.closeCreateModal = function() { document.getElementById('createThreadModal').classList.add('hidden'); };
+
+        // ADMIN PANEL LOGIC
+        window.openAdmin = function() {
+            const p = prompt("AUTHENTICATION REQUIRED:");
+            if(p === MASTER_KEY) {
+                document.getElementById('adminModal').classList.remove('hidden');
+            } else {
+                alert("ACCESS DENIED. IP LOGGED.");
+            }
+        }
 
         let isSubmitting = false;
 
@@ -1298,8 +1371,7 @@
             let v = localStorage.getItem('raveV') || 14205;
             v = parseInt(v) + 1;
             localStorage.setItem('raveV', v);
-            document.getElementById('visit-count').innerText = v.toLocaleString();
-
+            
             // Telemetría Falsa/Real Simple
             document.getElementById('sys-res').innerText = `${window.screen.width}x${window.screen.height}`;
             document.getElementById('sys-cpu').innerText = `${navigator.hardwareConcurrency || 4} CORES`;
