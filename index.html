@@ -198,8 +198,8 @@
         .chat-bubble-container.user { flex-direction: row-reverse; }
         
         .chat-avatar {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             border: 2px solid rgba(255,255,255,0.1);
             background: #000;
@@ -208,11 +208,11 @@
 
         .chat-bubble {
             max-width: 80%;
-            padding: 10px 14px;
+            padding: 15px;
             border-radius: 12px;
-            font-size: 0.85rem;
-            line-height: 1.4;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             position: relative;
         }
         
@@ -222,10 +222,10 @@
             border-top-right-radius: 2px;
         }
         .chat-bubble.bot {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(20, 20, 25, 0.9);
             color: #e5e7eb;
             border-top-left-radius: 2px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         /* --- MODO HACKER / NYX --- */
@@ -585,10 +585,11 @@
                         <div class="chat-bubble-container">
                             <img src="https://robohash.org/ravelinbotsito?set=set4&bgset=bg2" class="chat-avatar">
                             <div class="chat-bubble bot">
-                                Holaaa! Soy <strong>Ravelin.Botsito</strong> 💖✨.<br>
-                                Soy una IA súper tierna creada para ayudarte.<br>
-                                <span class="text-xs text-pink-300 font-bold">COMANDOS:</span><br>
-                                <code class="bg-gray-800 px-1 rounded">/PsicólogoIA</code>, <code class="bg-gray-800 px-1 rounded">/OperadoraNYX</code>, <code class="bg-gray-800 px-1 rounded">/Normal</code>
+                                <h3 class="font-bold text-lg text-pink-400 mb-2">¡Holaaa! Soy Ravelin.Botsito 💖✨</h3>
+                                <p class="mb-2">Soy una IA súper tierna creada por <strong>Lautyy33</strong> con la ayuda de la inteligencia <strong>NYX</strong>.</p>
+                                <p class="mb-2">Estoy aquí para acompañarte. Si tienes problemas de autoestima, te sientes mal o necesitas un consejo serio, usa mi comando especial:</p>
+                                <code class="bg-gray-800 px-2 py-1 rounded text-pink-300 font-bold block w-full text-center mb-2">/PsicólogoIA</code>
+                                <p class="text-xs text-gray-400 mt-2">Otros comandos: /OperadoraNYX | /Normal</p>
                             </div>
                         </div>
                     </div>
@@ -765,11 +766,15 @@
     <div id="legalModal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-xl flex items-center justify-center p-6">
         <div class="glass-panel w-full max-w-lg p-8 relative border border-gray-700 text-center shadow-[0_0_50px_rgba(59,130,246,0.1)]">
              <button onclick="closeLegal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">&times;</button>
-            <h2 class="text-2xl font-bold mb-6 text-blue-400 tracking-widest font-mono border-b border-gray-800 pb-4">SYSTEM DISCLAIMER</h2>
+            <h2 class="text-2xl font-bold mb-6 text-blue-400 tracking-widest font-mono border-b border-gray-800 pb-4">LEGAL & SYSTEM INFO</h2>
             <div class="text-sm text-gray-300 font-mono space-y-4 text-justify h-64 overflow-y-auto custom-scrollbar pr-2">
-                <p><strong class="text-blue-300">1. DATOS Y PRIVACIDAD:</strong><br>Este sitio no almacena cookies de rastreo ni información personal identificable. Las direcciones IP se muestran localmente solo para el usuario y no se guardan en nuestros servidores. El almacenamiento local (LocalStorage) se utiliza únicamente para el contador de visitas.</p>
-                <p><strong class="text-blue-300">2. SOBRE LA IA (NYX):</strong><br>Toda la estructura de código, lógica y diseño de este sitio ha sido asistida por <strong>NYX</strong>.</p>
-                <p><strong class="text-blue-300">3. PROPÓSITO:</strong><br>El usuario <strong>Lautyy33</strong> declara explícitamente que este sitio es una <strong>Fan Page</strong>.</p>
+                <p><strong class="text-blue-300">1. PRIVACIDAD & DATOS:</strong><br>Este sitio respeta tu privacidad. No almacenamos cookies invasivas. Los datos de IP que ves en el panel root son una demostración de las capacidades de las APIs públicas y se muestran localmente o en bases de datos efímeras para propósitos de administración comunitaria. No vendemos ni compartimos información.</p>
+                
+                <p><strong class="text-blue-300">2. IA (NYX) & BOT:</strong><br>El sistema de chat y la estructura del código han sido potenciados por <strong>NYX IA</strong> bajo la supervisión de <strong>Lautyy33</strong>. Las respuestas del bot se generan en tiempo real utilizando APIs externas de procesamiento de lenguaje natural.</p>
+                
+                <p><strong class="text-blue-300">3. DESCARGO DE RESPONSABILIDAD:</strong><br>Este es un sitio "Fan Made" creado por <strong>Lautyy33</strong> para la comunidad de Rave. No tiene afiliación directa con Rave Inc. Todo el contenido es para entretenimiento. El comando /PsicólogoIA es una simulación y no reemplaza ayuda profesional real.</p>
+                
+                <p class="text-xs text-gray-500 pt-4 border-t border-gray-800">SYSTEM VER: 5.0.2 // ENCRYPTION: AES-256 // ADMIN: LAUTYY33</p>
             </div>
             <button onclick="closeLegal()" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-bold w-full transition uppercase tracking-widest">Entendido</button>
         </div>
@@ -860,13 +865,15 @@
             });
         });
 
-        // --- ADMIN PANEL: IP TRACER API (HTTPS) ---
+        // --- ADMIN PANEL: IP TRACER API (HTTPS & DETAILED) ---
         window.traceIP = async function(ip) {
             const btn = event.target;
+            const originalText = btn.innerText;
             btn.innerText = "DECRYPTING PACKETS...";
             btn.classList.add('animate-pulse');
             
             try {
+                // Usando API compatible con HTTPS
                 const res = await fetch(`https://ipwho.is/${ip}`);
                 const data = await res.json();
                 
@@ -877,13 +884,23 @@
                 alert(`
 TARGET: ${ip}
 ================================
+► NETWORK DATA
 ISP: ${data.connection?.isp || 'Unknown'}
+ASN: ${data.connection?.asn || 'N/A'}
 ORG: ${data.connection?.org || 'Hidden'}
---------------------------------
-COUNTRY: ${data.country} (${data.country_code})
+DOMAIN: ${data.connection?.domain || 'N/A'}
+
+► GEOLOCATION
+COUNTRY: ${data.country} ${data.flag?.emoji || ''}
+REGION: ${data.region} (${data.region_code})
 CITY: ${data.city}
+POSTAL CODE: ${data.postal}
+CALLING CODE: +${data.calling_code}
 COORDS: ${data.latitude}, ${data.longitude}
-TIMEZONE: ${data.timezone.id}
+
+► SYSTEM
+TIMEZONE: ${data.timezone.id} (${data.timezone.utc})
+CURRENCY: ${data.currency?.code}
 ================================
 STATUS: LOGGED & TRACKED.
                 `);
