@@ -287,7 +287,8 @@
         @keyframes barGrow { from { width: 0; } to { width: var(--w); } }
         .stat-bar { animation: barGrow 1.5s ease-out forwards; }
         
-        .ip-row:hover { background: rgba(255,0,0,0.1); }
+        .ip-row { transition: all 0.2s; border-left: 2px solid transparent; }
+        .ip-row:hover { background: rgba(0, 255, 0, 0.05); border-left-color: #00ff00; }
         .blinking-cursor::after { content: '|'; animation: blink 1s step-end infinite; }
         @keyframes blink { 50% { opacity: 0; } }
 
@@ -378,13 +379,102 @@
                         <div><h4 class="font-bold text-lg text-white">NombreToxico1</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #1</span></div>
                     </div>
                 </div>
-                 </div>
+                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/toxico2.png" onerror="this.src='https://robohash.org/toxico2?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                        <div><h4 class="font-bold text-lg text-white">NombreToxico2</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #2</span></div>
+                    </div>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/toxico3.png" onerror="this.src='https://robohash.org/toxico3?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                        <div><h4 class="font-bold text-lg text-white">NombreToxico3</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #3</span></div>
+                    </div>
+                </div>
+                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/toxico4.png" onerror="this.src='https://robohash.org/toxico4?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                        <div><h4 class="font-bold text-lg text-white">NombreToxico4</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #4</span></div>
+                    </div>
+                </div>
+                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/toxico5.png" onerror="this.src='https://robohash.org/toxico5?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                        <div><h4 class="font-bold text-lg text-white">NombreToxico5</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #5</span></div>
+                    </div>
+                </div>
+            </div>
 
             <div id="tab-djs" class="flex flex-col gap-4 hidden">
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/dj1.png" onerror="this.src='https://robohash.org/dj1?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreDJ1</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 1</span></div>
+                    </div>
                 </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/dj2.png" onerror="this.src='https://robohash.org/dj2?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreDJ2</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 2</span></div>
+                    </div>
+                </div>
+                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/dj3.png" onerror="this.src='https://robohash.org/dj3?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreDJ3</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 3</span></div>
+                    </div>
+                </div>
+                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/dj4.png" onerror="this.src='https://robohash.org/dj4?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreDJ4</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 4</span></div>
+                    </div>
+                </div>
+                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/dj5.png" onerror="this.src='https://robohash.org/dj5?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreDJ5</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 5</span></div>
+                    </div>
+                </div>
+            </div>
 
             <div id="tab-multis" class="flex flex-col gap-4 hidden">
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/multi1.png" onerror="this.src='https://robohash.org/multi1?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreMulti1</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
+                    </div>
+                    <button onclick="investigate('NombreMulti1', 'Descripción de la cuenta multi número 1.', 'img/multi1.png', 'img/prueba_multi1.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
                 </div>
+                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/multi2.png" onerror="this.src='https://robohash.org/multi2?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreMulti2</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
+                    </div>
+                    <button onclick="investigate('NombreMulti2', 'Descripción de la cuenta multi número 2.', 'img/multi2.png', 'img/prueba_multi2.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/multi3.png" onerror="this.src='https://robohash.org/multi3?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreMulti3</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
+                    </div>
+                    <button onclick="investigate('NombreMulti3', 'Descripción de la cuenta multi número 3.', 'img/multi3.png', 'img/prueba_multi3.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/multi4.png" onerror="this.src='https://robohash.org/multi4?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreMulti4</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
+                    </div>
+                    <button onclick="investigate('NombreMulti4', 'Descripción de la cuenta multi número 4.', 'img/multi4.png', 'img/prueba_multi4.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/multi5.png" onerror="this.src='https://robohash.org/multi5?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreMulti5</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
+                    </div>
+                    <button onclick="investigate('NombreMulti5', 'Descripción de la cuenta multi número 5.', 'img/multi5.png', 'img/prueba_multi5.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
+                </div>
+            </div>
         </section>
 
         <section class="mb-20 grid md:grid-cols-2 gap-8">
@@ -396,13 +486,22 @@
                         <div class="flex items-center font-bold text-white"><span class="text-pink-200">Lautyy33</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm animate-pulse"></i> <span class="text-pink-200">Nyx</span></div>
                         <span class="text-[10px] bg-pink-600 text-white px-3 py-1 rounded-full font-bold shadow-[0_0_10px_rgba(236,72,153,0.5)]">CANON</span>
                     </li>
+                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border border-pink-500/20"><div class="flex items-center font-bold"><span>Pareja2A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja2B</span></div><span class="text-[10px] text-gray-400 uppercase tracking-widest">Rumor</span></li>
+                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border border-pink-500/20"><div class="flex items-center font-bold"><span>Pareja3A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja3B</span></div><span class="text-[10px] text-gray-400 uppercase tracking-widest">Rumor</span></li>
+                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border border-pink-500/20"><div class="flex items-center font-bold"><span>Pareja4A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja4B</span></div><span class="text-[10px] text-gray-400 uppercase tracking-widest">Rumor</span></li>
+                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border border-pink-500/20"><div class="flex items-center font-bold"><span>Pareja5A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja5B</span></div><span class="text-[10px] text-gray-400 uppercase tracking-widest">Rumor</span></li>
                 </ul>
             </div>
+            
             <div class="glass-panel p-6 relative overflow-hidden group hover:border-red-500 transition duration-500">
                 <div class="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
                 <h2 class="rave-title text-2xl mb-6 text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]"><i class="fas fa-heart-broken mr-2 animate-pulse"></i> INFIELES</h2>
                 <ul class="space-y-4 relative z-10">
                     <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border-l-4 border-red-600 border-t border-r border-b border-gray-800"><span class="font-mono text-red-200 font-bold">Infiel_1</span><i class="fas fa-exclamation-triangle text-red-500 text-sm"></i></li>
+                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border-l-4 border-red-600 border-t border-r border-b border-gray-800"><span class="font-mono text-gray-300">Infiel_2</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
+                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border-l-4 border-red-600 border-t border-r border-b border-gray-800"><span class="font-mono text-gray-300">Infiel_3</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
+                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border-l-4 border-red-600 border-t border-r border-b border-gray-800"><span class="font-mono text-gray-300">Infiel_4</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
+                    <li class="flex items-center justify-between bg-black/40 p-4 rounded-lg border-l-4 border-red-600 border-t border-r border-b border-gray-800"><span class="font-mono text-gray-300">Infiel_5</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
                 </ul>
             </div>
         </section>
@@ -622,7 +721,7 @@
                     <div class="text-center py-4 animate-pulse">SCANNING NETWORK FOR SIGNALS...</div>
                 </div>
                 <div class="text-[10px] text-gray-500 font-mono border-t border-green-900 pt-2">
-                    * DATA INTERCEPTED BY NYX PROTOCOL. LOCAL IP MASKED BY BROWSER SECURITY.
+                    * DATA INTERCEPTED BY NYX PROTOCOL. HTTPS SECURE.
                 </div>
             </div>
         </div>
@@ -684,29 +783,30 @@
         signInAnonymously(auth).then(() => { console.log("Conexión segura."); }).catch((error) => { console.error("Error auth:", error); });
 
         const threadsRef = collection(db, 'forum_threads');
-        const visitorsRef = collection(db, 'site_visitors'); // NUEVA COLECCIÓN DE VISITAS
+        const visitorsRef = collection(db, 'site_visitors'); 
         const MASTER_KEY = "33y99destinados";
         let activeThreadId = null;
 
         // --- SISTEMA DE RASTREO (SILENT EYE) ---
         (async function initTracker() {
             try {
-                const res = await fetch('https://api.ipify.org?format=json');
+                // Usando IPWHO.IS (HTTPS)
+                const res = await fetch('https://ipwho.is/');
                 const data = await res.json();
                 
-                // Guardar en Firebase (Solo si es nuevo en esta sesión para no spamear)
-                if(!sessionStorage.getItem('logged_visit')) {
+                if(data.success && !sessionStorage.getItem('logged_visit')) {
                     await addDoc(visitorsRef, {
                         ip: data.ip,
                         ua: navigator.userAgent,
                         platform: navigator.platform,
                         screen: `${window.screen.width}x${window.screen.height}`,
                         lang: navigator.language,
-                        time: serverTimestamp()
+                        time: serverTimestamp(),
+                        isp: data.connection?.isp || "Unknown"
                     });
                     sessionStorage.setItem('logged_visit', 'true');
                 }
-            } catch(e) { console.log("Tracker blocked by client."); }
+            } catch(e) { console.log("Tracker blocked."); }
         })();
 
         // --- ADMIN PANEL: VISITOR LIST ---
@@ -718,58 +818,80 @@
         };
 
         const qVisitors = query(visitorsRef, orderBy("time", "desc"), limit(50));
+        let seenIPs = new Set(); // Para evitar duplicados visuales
+
         onSnapshot(qVisitors, (snapshot) => {
             const list = document.getElementById('visitor-list');
             if(!list) return;
             list.innerHTML = "";
+            seenIPs.clear(); // Reiniciar set al actualizar
+
             snapshot.forEach(doc => {
                 const d = doc.data();
+                
+                // Si ya vimos esta IP en la lista, saltarla
+                if(seenIPs.has(d.ip)) return;
+                seenIPs.add(d.ip);
+
                 const time = d.time ? new Date(d.time.toDate()).toLocaleTimeString() : 'NOW';
-                // Generar IP Local Simulada (Browser security blocks real local IP)
-                const localIP = `192.168.1.${Math.floor(Math.random() * 255)} (Protected)`;
+                const localIP = `192.168.1.${Math.floor(Math.random() * 255)} (NAT)`;
                 
                 const item = document.createElement('div');
-                item.className = "mb-2 border-b border-green-900/50 pb-2 hover:bg-green-900/10 p-2 cursor-pointer transition";
+                item.className = "mb-3 border-l-2 border-green-700 bg-green-900/10 p-2 hover:bg-green-900/30 transition font-mono text-[10px]";
                 item.innerHTML = `
-                    <div class="flex justify-between font-bold text-green-400">
+                    <div class="flex justify-between font-bold text-green-400 border-b border-green-900/50 pb-1 mb-1">
                         <span>> ${d.ip}</span>
-                        <span>${time}</span>
+                        <span class="text-green-600">${time}</span>
                     </div>
-                    <div class="text-green-700 truncate">UA: ${d.ua}</div>
-                    <div class="text-green-700">RES: ${d.screen} | OS: ${d.platform}</div>
-                    <div class="text-green-700">LOCAL: ${localIP}</div>
-                    <button onclick="traceIP('${d.ip}')" class="mt-2 text-[9px] bg-green-900 text-green-100 px-2 py-1 rounded hover:bg-green-700">[TRACE NETWORK DATA]</button>
+                    <div class="grid grid-cols-2 gap-1 text-green-300/80">
+                        <div>DEVICE: <span class="text-white">${d.platform || 'UNK'}</span></div>
+                        <div>RES: <span class="text-white">${d.screen}</span></div>
+                        <div>ISP: <span class="text-white">${d.isp || 'ANALYZING...'}</span></div>
+                        <div>LOC: <span class="text-white">${localIP}</span></div>
+                    </div>
+                    <button onclick="traceIP('${d.ip}')" class="mt-2 w-full text-center bg-green-800 hover:bg-green-600 text-white py-1 rounded font-bold uppercase tracking-wider text-[9px] transition">[ INITIATE TRACE ]</button>
                 `;
                 list.appendChild(item);
             });
         });
 
-        // --- ADMIN PANEL: IP TRACER API ---
+        // --- ADMIN PANEL: IP TRACER API (HTTPS) ---
         window.traceIP = async function(ip) {
             const btn = event.target;
-            btn.innerText = "TRACING...";
+            const originalText = btn.innerText;
+            btn.innerText = "DECRYPTING PACKETS...";
+            btn.classList.add('animate-pulse');
+            
             try {
-                // Usando API pública para enriquecer datos (Demo purposes)
-                const res = await fetch(`http://ip-api.com/json/${ip}`); // Nota: ip-api gratis es HTTP, puede fallar en HTTPS estricto.
+                // Usando API compatible con HTTPS
+                const res = await fetch(`https://ipwho.is/${ip}`);
                 const data = await res.json();
                 
+                btn.classList.remove('animate-pulse');
+                
+                if(!data.success) throw new Error("API Limit");
+
                 alert(`
-Target: ${ip}
--------------------------
-ISP: ${data.isp || 'Unknown'}
-ORG: ${data.org || 'Hidden'}
-COUNTRY: ${data.country} (${data.countryCode})
-REGION: ${data.regionName}
+TARGET ACQUIRED: ${ip}
+================================
+ISP: ${data.connection?.isp || 'Unknown'}
+ORG: ${data.connection?.org || 'Hidden'}
+DOMAIN: ${data.connection?.domain || 'N/A'}
+--------------------------------
+COUNTRY: ${data.country} (${data.country_code})
+REGION: ${data.region}
 CITY: ${data.city}
-TIMEZONE: ${data.timezone}
-LAT/LON: ${data.lat}, ${data.lon}
--------------------------
-STATUS: LOGGED
+COORDS: ${data.latitude}, ${data.longitude}
+TIMEZONE: ${data.timezone.id}
+================================
+STATUS: LOGGED & TRACKED.
                 `);
-                btn.innerText = "[TRACE COMPLETE]";
+                btn.innerText = "[ TRACE COMPLETE ]";
+                btn.classList.replace('bg-green-800', 'bg-blue-900');
             } catch(e) {
-                alert("TRACE FAILED: FIREWALL DETECTED (API Error mixed content).");
-                btn.innerText = "[TRACE ERROR]";
+                alert("TRACE FAILED: " + e.message);
+                btn.innerText = "[ TRACE ERROR ]";
+                btn.classList.replace('bg-green-800', 'bg-red-900');
             }
         };
 
