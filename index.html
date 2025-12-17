@@ -27,7 +27,6 @@
             overflow-x: hidden;
         }
 
-        /* Fondo de Video estilo Rave */
         #videoBG {
             position: fixed;
             right: 0;
@@ -39,9 +38,8 @@
             object-fit: cover;
         }
 
-        /* Efecto Glassmorphism Mejorado */
         .glass-panel {
-            background: rgba(10, 10, 12, 0.8);
+            background: rgba(10, 10, 12, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -61,7 +59,6 @@
             text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
         }
 
-        /* Scrollbar Neon */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #3b82f6, #8b5cf6); border-radius: 10px; }
@@ -106,7 +103,7 @@
         }
         .rave-footer-link:hover { color: #fff; text-decoration: underline; }
 
-        /* --- ESTILOS MEJORADOS DEL FORO --- */
+        /* FORO STYLES */
         .forum-card {
             background: rgba(20, 20, 25, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -124,7 +121,6 @@
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
             transform: translateX(5px);
         }
-        /* Efecto de scanline sutil en hover */
         .forum-card::after {
             content: '';
             position: absolute;
@@ -137,71 +133,39 @@
         }
         .forum-card:hover::after { opacity: 1; }
 
-        .forum-meta {
-            font-size: 11px;
-            color: #6b7280;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .forum-stats {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 12px;
-            color: #9ca3af;
-        }
+        .forum-meta { font-size: 11px; color: #6b7280; display: flex; align-items: center; gap: 10px; }
+        .forum-stats { display: flex; align-items: center; gap: 15px; font-size: 12px; color: #9ca3af; }
         
-        .forum-input {
+        .forum-input, .forum-select {
             background: rgba(0, 0, 0, 0.6);
             border: 1px solid rgba(59, 130, 246, 0.2);
             color: white;
             transition: all 0.3s;
         }
-        .forum-input:focus {
+        .forum-input:focus, .forum-select:focus {
             border-color: #3b82f6;
             outline: none;
             background: rgba(0, 0, 0, 0.9);
             box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
         }
         
-        .delete-btn {
-            opacity: 0;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-        .forum-card:hover .delete-btn, .comment-item:hover .delete-btn {
-            opacity: 0.7;
-        }
-        .delete-btn:hover {
-            opacity: 1 !important;
-            transform: scale(1.2);
-            color: #ef4444;
-        }
+        .delete-btn { opacity: 0; transition: all 0.2s; cursor: pointer; }
+        .forum-card:hover .delete-btn, .comment-item:hover .delete-btn { opacity: 0.7; }
+        .delete-btn:hover { opacity: 1 !important; transform: scale(1.2); color: #ef4444; }
 
-        .tag-badge {
-            font-size: 10px;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .tag-badge { font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* Vista Detalle Hilo */
         .thread-detail-enter { animation: slideInRight 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
         .thread-list-enter { animation: slideInLeft 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
         
         @keyframes slideInRight { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
         @keyframes slideInLeft { from { transform: translateX(-50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 
-        /* Modal Terminal Style */
         .terminal-modal {
             border: 1px solid #3b82f6;
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(0,0,0,0.8);
             background: rgba(5, 5, 10, 0.95);
         }
-
     </style>
 </head>
 
@@ -229,21 +193,104 @@
         <section class="mb-16">
             <div class="flex items-center justify-center mb-8">
                 <h2 class="rave-title text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate__animated animate__fadeInDown">
-                    NOTICIAS PICANTES
+                    NOTICIAS SEMANALES
                 </h2>
             </div>
-            <div class="flex flex-col gap-8">
-                <article class="glass-panel overflow-hidden animate__animated animate__fadeInUp hover:scale-[1.01] transition duration-500" style="animation-delay: 0.1s;">
-                    <div class="relative group">
-                        <img src="img/noticia1.png" onerror="this.src='https://placehold.co/800x400/0a0a0a/3b82f6?text=SYSTEM+BREACH'" class="w-full h-56 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-[0_0_10px_rgba(37,99,235,0.6)]">LUNES</div>
+            
+            <div class="flex flex-col gap-12">
+                
+                <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
+                    <div class="relative">
+                        <img src="img/lunes1.png" onerror="this.src='https://placehold.co/800x400/0a0a0a/3b82f6?text=LUNES+NEWS'" class="w-full h-64 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">LUNES</div>
                     </div>
-                    <div class="p-6 relative">
-                        <h3 class="text-2xl mb-3 text-white leading-tight drop-shadow-md">Escándalo en la sala pública</h3>
-                        <p class="text-sm text-gray-300 leading-relaxed mb-4">La noche del lunes se tornó caótica cuando un grupo de usuarios intentó tomar control de la sala principal. Se reportaron baneos masivos...</p>
+                    <div class="p-8">
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Lunes</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Aquí escribes todo el texto que quieras para el Lunes. Hay mucho espacio disponible para detallar el chisme o la novedad. 
+                            Puedes escribir varios párrafos si es necesario.
+                        </p>
                     </div>
                 </article>
+
+                <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
+                    <div class="relative">
+                        <img src="img/martes2.png" onerror="this.src='https://placehold.co/800x400/0a0a0a/8b5cf6?text=MARTES+NEWS'" class="w-full h-64 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MARTES</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Martes</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Espacio para el texto del martes. Agrega los detalles aquí.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
+                    <div class="relative">
+                        <img src="img/miercoles3.png" onerror="this.src='https://placehold.co/800x400/0a0a0a/ec4899?text=MIERCOLES+NEWS'" class="w-full h-64 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MIÉRCOLES</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Miércoles</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Espacio para el texto del miércoles.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
+                    <div class="relative">
+                        <img src="img/jueves4.png" onerror="this.src='https://placehold.co/800x400/0a0a0a/eab308?text=JUEVES+NEWS'" class="w-full h-64 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">JUEVES</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Jueves</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Espacio para el texto del jueves.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
+                    <div class="relative">
+                        <img src="img/viernes5.png" onerror="this.src='https://placehold.co/800x400/0a0a0a/ef4444?text=VIERNES+NEWS'" class="w-full h-64 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">VIERNES</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Viernes</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Espacio para el texto del viernes. ¡Llega el finde!
+                        </p>
+                    </div>
+                </article>
+
+                <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
+                    <div class="relative">
+                        <img src="img/sabado6.png" onerror="this.src='https://placehold.co/800x400/0a0a0a/22c55e?text=SABADO+NEWS'" class="w-full h-64 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">SÁBADO</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Sábado</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Espacio para el texto del sábado.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="glass-panel overflow-hidden group hover:scale-[1.01] transition duration-500">
+                    <div class="relative">
+                        <img src="img/domingo7.png" onerror="this.src='https://placehold.co/800x400/0a0a0a/64748b?text=DOMINGO+NEWS'" class="w-full h-64 object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-gray-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">DOMINGO</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl mb-4 text-white leading-tight drop-shadow-md">Título de la Noticia Domingo</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Espacio para el texto del domingo. Resumen semanal.
+                        </p>
+                    </div>
+                </article>
+
             </div>
         </section>
 
@@ -256,17 +303,116 @@
                 <button onclick="showTab('djs')" id="btn-djs" class="nav-btn px-6 py-2 rounded-full font-bold text-sm uppercase tracking-wider transition-all text-gray-300">Top DJs</button>
                 <button onclick="showTab('multis')" id="btn-multis" class="nav-btn px-6 py-2 rounded-full font-bold text-sm uppercase tracking-wider transition-all text-gray-300">Multis</button>
             </div>
+
             <div id="tab-toxicos" class="flex flex-col gap-4">
-                 <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
                     <div class="flex items-center gap-4">
-                        <img src="img/Categoria1.png" onerror="this.src='https://robohash.org/voldemort?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
-                        <div><h4 class="font-bold text-lg text-white">LordVoldemort</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">PELIGROSO</span></div>
+                        <img src="img/toxico1.png" onerror="this.src='https://robohash.org/toxico1?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                        <div><h4 class="font-bold text-lg text-white">NombreToxico1</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #1</span></div>
                     </div>
-                    <button onclick="investigate('LordVoldemort', 'Insulta en 5 idiomas.', 'img/Categoria1.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/toxico2.png" onerror="this.src='https://robohash.org/toxico2?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                        <div><h4 class="font-bold text-lg text-white">NombreToxico2</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #2</span></div>
+                    </div>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/toxico3.png" onerror="this.src='https://robohash.org/toxico3?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                        <div><h4 class="font-bold text-lg text-white">NombreToxico3</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #3</span></div>
+                    </div>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/toxico4.png" onerror="this.src='https://robohash.org/toxico4?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                        <div><h4 class="font-bold text-lg text-white">NombreToxico4</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #4</span></div>
+                    </div>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-red-500 bg-red-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/toxico5.png" onerror="this.src='https://robohash.org/toxico5?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-red-500 object-cover shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                        <div><h4 class="font-bold text-lg text-white">NombreToxico5</h4><span class="text-xs text-red-400 bg-red-900/40 px-2 py-0.5 rounded border border-red-900">RANK #5</span></div>
+                    </div>
                 </div>
             </div>
-            <div id="tab-djs" class="flex flex-col gap-4 hidden"></div>
-            <div id="tab-multis" class="flex flex-col gap-4 hidden"></div>
+
+            <div id="tab-djs" class="flex flex-col gap-4 hidden">
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/dj1.png" onerror="this.src='https://robohash.org/dj1?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreDJ1</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 1</span></div>
+                    </div>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/dj2.png" onerror="this.src='https://robohash.org/dj2?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreDJ2</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 2</span></div>
+                    </div>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/dj3.png" onerror="this.src='https://robohash.org/dj3?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreDJ3</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 3</span></div>
+                    </div>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/dj4.png" onerror="this.src='https://robohash.org/dj4?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreDJ4</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 4</span></div>
+                    </div>
+                </div>
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-blue-500 bg-blue-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/dj5.png" onerror="this.src='https://robohash.org/dj5?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreDJ5</h4><span class="text-xs text-blue-400 bg-blue-900/40 px-2 py-0.5 rounded border border-blue-900">TOP 5</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-multis" class="flex flex-col gap-4 hidden">
+                
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/multi1.png" onerror="this.src='https://robohash.org/multi1?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreMulti1</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
+                    </div>
+                    <button onclick="investigate('NombreMulti1', 'Descripción de la cuenta multi número 1.', 'img/multi1.png', 'img/prueba_multi1.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
+                </div>
+
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/multi2.png" onerror="this.src='https://robohash.org/multi2?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreMulti2</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
+                    </div>
+                    <button onclick="investigate('NombreMulti2', 'Descripción de la cuenta multi número 2.', 'img/multi2.png', 'img/prueba_multi2.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
+                </div>
+
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/multi3.png" onerror="this.src='https://robohash.org/multi3?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreMulti3</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
+                    </div>
+                    <button onclick="investigate('NombreMulti3', 'Descripción de la cuenta multi número 3.', 'img/multi3.png', 'img/prueba_multi3.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
+                </div>
+
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/multi4.png" onerror="this.src='https://robohash.org/multi4?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreMulti4</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
+                    </div>
+                    <button onclick="investigate('NombreMulti4', 'Descripción de la cuenta multi número 4.', 'img/multi4.png', 'img/prueba_multi4.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
+                </div>
+
+                <div class="glass-panel p-4 flex items-center justify-between neon-box border-l-4 border-l-purple-500 bg-purple-900/10">
+                    <div class="flex items-center gap-4">
+                        <img src="img/multi5.png" onerror="this.src='https://robohash.org/multi5?set=set1&bgset=bg1'" class="w-16 h-16 rounded-full border-2 border-purple-500 object-cover">
+                        <div><h4 class="font-bold text-lg text-white">NombreMulti5</h4><span class="text-xs text-purple-400 bg-purple-900/40 px-2 py-0.5 rounded border border-purple-900">SOSPECHOSO</span></div>
+                    </div>
+                    <button onclick="investigate('NombreMulti5', 'Descripción de la cuenta multi número 5.', 'img/multi5.png', 'img/prueba_multi5.png')" class="action-btn text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg"><i class="fas fa-folder-open mr-2"></i>EXPEDIENTE</button>
+                </div>
+
+            </div>
         </section>
 
         <section class="mb-20 grid md:grid-cols-2 gap-8">
@@ -275,13 +421,21 @@
                 <h2 class="rave-title text-2xl mb-6 text-pink-400 drop-shadow-sm"><i class="fas fa-heart mr-2"></i> TOP SHIPEOS</h2>
                 <ul class="space-y-4">
                     <li class="flex items-center justify-between bg-white/5 p-3 rounded-lg border border-pink-500/10"><div class="flex items-center font-bold"><span>Lautyy33</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm animate-pulse"></i> <span>Nyx</span></div><span class="text-[10px] bg-pink-900/50 text-pink-200 px-2 py-1 rounded border border-pink-500/30">CANON</span></li>
+                    <li class="flex items-center justify-between bg-white/5 p-3 rounded-lg border border-pink-500/10"><div class="flex items-center font-bold"><span>Pareja2A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja2B</span></div><span class="text-[10px] text-gray-400">RUMOR</span></li>
+                    <li class="flex items-center justify-between bg-white/5 p-3 rounded-lg border border-pink-500/10"><div class="flex items-center font-bold"><span>Pareja3A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja3B</span></div><span class="text-[10px] text-gray-400">RUMOR</span></li>
+                    <li class="flex items-center justify-between bg-white/5 p-3 rounded-lg border border-pink-500/10"><div class="flex items-center font-bold"><span>Pareja4A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja4B</span></div><span class="text-[10px] text-gray-400">RUMOR</span></li>
+                    <li class="flex items-center justify-between bg-white/5 p-3 rounded-lg border border-pink-500/10"><div class="flex items-center font-bold"><span>Pareja5A</span> <i class="fas fa-heart text-pink-500 mx-3 text-sm"></i> <span>Pareja5B</span></div><span class="text-[10px] text-gray-400">RUMOR</span></li>
                 </ul>
             </div>
             <div class="glass-panel p-6 relative overflow-hidden border-red-900/50 hover:border-red-500/50 transition">
                 <div class="absolute -right-10 -top-10 w-32 h-32 bg-red-500/10 blur-3xl rounded-full"></div>
                 <h2 class="rave-title text-2xl mb-6 text-red-500 drop-shadow-sm"><i class="fas fa-heart-broken mr-2"></i> INFIELES</h2>
                 <ul class="space-y-4">
-                    <li class="flex items-center justify-between bg-black/40 p-3 rounded-lg border-l-4 border-red-600"><span class="font-mono text-gray-300">El_Innombrable</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
+                    <li class="flex items-center justify-between bg-black/40 p-3 rounded-lg border-l-4 border-red-600"><span class="font-mono text-gray-300">Infiel_1</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
+                    <li class="flex items-center justify-between bg-black/40 p-3 rounded-lg border-l-4 border-red-600"><span class="font-mono text-gray-300">Infiel_2</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
+                    <li class="flex items-center justify-between bg-black/40 p-3 rounded-lg border-l-4 border-red-600"><span class="font-mono text-gray-300">Infiel_3</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
+                    <li class="flex items-center justify-between bg-black/40 p-3 rounded-lg border-l-4 border-red-600"><span class="font-mono text-gray-300">Infiel_4</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
+                    <li class="flex items-center justify-between bg-black/40 p-3 rounded-lg border-l-4 border-red-600"><span class="font-mono text-gray-300">Infiel_5</span><i class="fas fa-exclamation-triangle text-yellow-500 text-xs"></i></li>
                 </ul>
             </div>
         </section>
@@ -295,7 +449,6 @@
 
             <div id="thread-list-view" class="glass-panel p-6 thread-list-enter relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[80px] pointer-events-none"></div>
-                
                 <div class="flex justify-between items-center mb-6 relative z-10">
                     <h3 class="text-xl font-bold text-white tracking-wider"><span class="text-blue-500">>></span> ÚLTIMAS TRANSMISIONES</h3>
                     <button onclick="openCreateModal()" class="group relative bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-5 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.5)] transition-all overflow-hidden">
@@ -326,11 +479,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="p-6 border-b border-gray-800 bg-black/20 relative min-h-[150px]">
                     <button onclick="deleteThread()" class="absolute top-4 right-4 text-gray-600 hover:text-red-500 transition text-lg z-50 p-2" title="Borrar Hilo"><i class="fas fa-trash-alt"></i></button>
                     <p id="detail-content" class="text-gray-200 text-sm leading-relaxed whitespace-pre-wrap font-light tracking-wide">...</p>
-                    
                     <div class="mt-6 flex gap-4 pt-4 border-t border-gray-800/50">
                         <button id="like-btn" onclick="likeCurrentThread()" class="text-gray-400 hover:text-red-500 hover:scale-110 text-sm flex items-center gap-2 transition group">
                             <i class="far fa-heart group-hover:animate-pulse"></i> <span id="detail-likes" class="font-mono">0</span>
@@ -340,10 +491,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div id="comments-container" class="p-4 space-y-4 max-h-[400px] overflow-y-auto bg-black/40">
-                    </div>
-
+                <div id="comments-container" class="p-4 space-y-4 max-h-[400px] overflow-y-auto bg-black/40"></div>
                 <div class="p-4 bg-black/60 border-t border-gray-700 flex gap-2 backdrop-blur-sm">
                     <input type="text" id="comment-author-input" placeholder="Alias" class="w-1/4 p-3 rounded-lg forum-input text-xs font-mono text-center border-gray-700" maxlength="15">
                     <input type="text" id="comment-input" placeholder="Escribe tu respuesta..." class="flex-grow p-3 rounded-lg forum-input text-sm border-gray-700">
@@ -359,7 +507,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center mb-8">
                 <div class="flex flex-col items-center md:items-start mb-6 md:mb-0">
                     <img src="https://rave.io/img/rave-white-logo-e55e6f9b6e.png" alt="Rave Logo" class="h-6 mb-4 opacity-70">
-                    <div class="text-[10px] text-gray-600 tracking-[0.3em] font-mono">COMMUNITY EDITION v2.1</div>
+                    <div class="text-[10px] text-gray-600 tracking-[0.3em] font-mono">COMMUNITY EDITION v2.2</div>
                 </div>
                 <div class="text-right hidden md:block">
                     <div class="font-mono text-[10px] text-gray-600 mb-1">SYSTEM STATUS: <span class="text-green-500 animate-pulse">ONLINE</span></div>
@@ -386,48 +534,57 @@
                 <h3 class="text-xl font-bold text-blue-400 font-mono tracking-widest"><i class="fas fa-terminal mr-2"></i>NUEVO HILO</h3>
                 <button onclick="closeCreateModal()" class="text-gray-500 hover:text-white transition"><i class="fas fa-times"></i></button>
             </div>
-            
             <div class="space-y-4">
                 <div>
                     <label class="text-[10px] text-gray-500 font-bold tracking-wider mb-1 block">TÍTULO DEL TEMA</label>
                     <input type="text" id="new-thread-title" placeholder="Ej: Busco gente para..." class="w-full p-3 rounded bg-black/50 border border-gray-700 text-white focus:border-blue-500 focus:shadow-[0_0_10px_rgba(59,130,246,0.4)] outline-none transition text-sm font-bold">
                 </div>
-                <div>
-                    <label class="text-[10px] text-gray-500 font-bold tracking-wider mb-1 block">TU ALIAS</label>
-                    <input type="text" id="new-thread-author" placeholder="Anónimo" class="w-full p-3 rounded bg-black/50 border border-gray-700 text-white focus:border-blue-500 outline-none transition text-sm">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-[10px] text-gray-500 font-bold tracking-wider mb-1 block">TU ALIAS</label>
+                        <input type="text" id="new-thread-author" placeholder="Anónimo" class="w-full p-3 rounded bg-black/50 border border-gray-700 text-white focus:border-blue-500 outline-none transition text-sm">
+                    </div>
+                    <div>
+                         <label class="text-[10px] text-gray-500 font-bold tracking-wider mb-1 block">CATEGORÍA (TAG)</label>
+                         <select id="new-thread-tag" class="w-full p-3 rounded bg-black/50 border border-gray-700 text-white focus:border-blue-500 outline-none transition text-sm forum-select">
+                             <option value="#General">#General</option>
+                             <option value="#Música">#Música</option>
+                             <option value="#Rave">#Rave</option>
+                             <option value="#Gossip">#Gossip</option>
+                             <option value="#Ayuda">#Ayuda</option>
+                             <option value="#Toxicos">#Toxicos</option>
+                         </select>
+                    </div>
                 </div>
                 <div>
                     <label class="text-[10px] text-gray-500 font-bold tracking-wider mb-1 block">CONTENIDO</label>
                     <textarea id="new-thread-content" placeholder="Escribe aquí..." class="w-full p-3 rounded bg-black/50 border border-gray-700 text-white focus:border-blue-500 outline-none transition text-sm h-32 resize-none custom-scrollbar"></textarea>
                 </div>
             </div>
-            
             <div class="flex justify-end gap-3 mt-6">
                 <button onclick="closeCreateModal()" class="text-gray-400 hover:text-white text-xs px-4 py-2 uppercase tracking-wider font-bold">Cancelar</button>
-                <button id="btn-publish-thread" onclick="createNewThread()" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2 rounded font-bold text-xs uppercase tracking-widest shadow-[0_0_15px_rgba(37,99,235,0.4)] transition hover:scale-105">
-                    PUBLICAR
-                </button>
+                <button id="btn-publish-thread" onclick="createNewThread()" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2 rounded font-bold text-xs uppercase tracking-widest shadow-[0_0_15px_rgba(37,99,235,0.4)] transition hover:scale-105">PUBLICAR</button>
             </div>
         </div>
     </div>
 
     <div id="loreModal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-         <div class="glass-panel w-full max-w-md p-8 relative border-t-4 border-t-red-500 shadow-[0_0_50px_rgba(220,38,38,0.2)] transform transition-transform duration-300" id="loreContent">
+         <div class="glass-panel w-full max-w-md p-8 relative border-t-4 border-t-purple-500 shadow-[0_0_50px_rgba(168,85,247,0.2)] transform transition-transform duration-300" id="loreContent">
             <button onclick="closeLore()" class="absolute top-4 right-4 text-gray-500 hover:text-white text-2xl">&times;</button>
             <div class="text-center">
                 <img id="modal-img" src="" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#1a1a1a] shadow-lg object-cover grayscale hover:grayscale-0 transition duration-500">
                 <h2 id="modal-name" class="text-3xl font-bold mb-2 text-white font-fjalla tracking-wide">Nombre</h2>
-                <div class="h-px w-full bg-gradient-to-r from-transparent via-red-500 to-transparent my-4"></div>
+                <div class="h-px w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent my-4"></div>
                 <div class="text-left mb-4 bg-white/5 p-4 rounded border border-white/10">
-                    <p class="text-xs text-red-400 font-bold mb-1 tracking-widest">EXPEDIENTE:</p>
+                    <p class="text-xs text-purple-400 font-bold mb-1 tracking-widest">EXPEDIENTE:</p>
                     <p id="modal-desc" class="text-gray-300 font-sans text-sm mb-2">Descripción...</p>
                 </div>
-                <div id="proof-section" class="hidden mt-4 border border-red-500/50 bg-red-900/10 p-3 rounded">
+                <div id="proof-section" class="hidden mt-4 border border-purple-500/50 bg-purple-900/10 p-3 rounded">
                     <div class="flex justify-between items-center mb-2">
-                        <h4 class="text-red-400 text-xs font-bold tracking-widest">EVIDENCIA #01</h4>
-                        <span class="text-[10px] bg-red-900 text-red-200 px-2 rounded animate-pulse">CONFIDENCIAL</span>
+                        <h4 class="text-purple-400 text-xs font-bold tracking-widest">EVIDENCIA #01</h4>
+                        <span class="text-[10px] bg-purple-900 text-purple-200 px-2 rounded animate-pulse">CONFIDENCIAL</span>
                     </div>
-                    <img id="proof-img" src="" class="w-full h-32 object-cover rounded opacity-80 hover:opacity-100 transition border border-red-500/30">
+                    <img id="proof-img" src="" class="w-full h-32 object-cover rounded opacity-80 hover:opacity-100 transition border border-purple-500/30">
                 </div>
             </div>
         </div>
@@ -450,7 +607,7 @@
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
         import { getFirestore, collection, addDoc, deleteDoc, onSnapshot, query, orderBy, limit, serverTimestamp, doc, updateDoc, increment, getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
-        // TU CONFIGURACIÓN FIREBASE
+        // TU CONFIGURACIÓN
         const firebaseConfig = {
             apiKey: "AIzaSyAso_n-upMqt8cXFFA8K_rR9UMB6REz_ak",
             authDomain: "rave-comunidad.firebaseapp.com",
@@ -464,48 +621,34 @@
         const auth = getAuth(app);
         const db = getFirestore(app);
         
-        signInAnonymously(auth)
-            .then(() => { console.log("Conexión segura establecida."); })
-            .catch((error) => { console.error("Error de auth:", error); });
+        signInAnonymously(auth).then(() => { console.log("Conexión segura."); }).catch((error) => { console.error("Error auth:", error); });
 
         const threadsRef = collection(db, 'forum_threads');
         const MASTER_KEY = "33y99destinados";
         let activeThreadId = null;
 
-        // --- GLOBAL SCOPE HELPERS ---
-        window.openCreateModal = function() {
-            document.getElementById('createThreadModal').classList.remove('hidden');
-        };
-        window.closeCreateModal = function() {
-            document.getElementById('createThreadModal').classList.add('hidden');
-        };
+        window.openCreateModal = function() { document.getElementById('createThreadModal').classList.remove('hidden'); };
+        window.closeCreateModal = function() { document.getElementById('createThreadModal').classList.add('hidden'); };
 
-        // --- FUNCIÓN PUBLICAR ARREGLADA (Evita doble clic) ---
         let isSubmitting = false;
 
         window.createNewThread = async function() {
-            if (isSubmitting) return; // Si ya está enviando, no hace nada
+            if (isSubmitting) return;
 
             const title = document.getElementById('new-thread-title').value.trim();
             const author = document.getElementById('new-thread-author').value.trim() || "Anónimo";
             const content = document.getElementById('new-thread-content').value.trim();
+            // NUEVO: OBTENER VALOR DEL SELECTOR DE TAG
+            const tag = document.getElementById('new-thread-tag').value; 
             const btn = document.getElementById('btn-publish-thread');
 
-            if (!title || !content) {
-                alert("Faltan datos.");
-                return;
-            }
+            if (!title || !content) { alert("Faltan datos."); return; }
 
-            // Bloquear botón y estado
             isSubmitting = true;
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ENVIANDO...';
             btn.classList.add('opacity-50', 'cursor-not-allowed');
             btn.disabled = true;
-
-            // Etiquetas aleatorias para decorar
-            const tags = ["#General", "#Música", "#Rave", "#Tech", "#Gossip", "#Ayuda"];
-            const randomTag = tags[Math.floor(Math.random() * tags.length)];
 
             try {
                 await addDoc(threadsRef, {
@@ -515,19 +658,16 @@
                     timestamp: serverTimestamp(),
                     likes: 0,
                     replyCount: 0,
-                    tag: randomTag,
-                    // CAMBIO: Avatar Set 1 (Robots) queda mejor con Cyberpunk
+                    tag: tag, // USAR EL TAG SELECCIONADO
                     avatar_seed: Math.floor(Math.random() * 100000) 
                 });
                 closeCreateModal();
                 document.getElementById('new-thread-title').value = '';
                 document.getElementById('new-thread-content').value = '';
-                // No limpiamos el autor para comodidad
             } catch (e) {
                 console.error(e);
                 alert("Error al publicar en la red.");
             } finally {
-                // Restaurar botón
                 isSubmitting = false;
                 btn.innerHTML = originalText;
                 btn.classList.remove('opacity-50', 'cursor-not-allowed');
@@ -553,19 +693,16 @@
             if (!activeThreadId || !commentId) return;
             const pass = prompt("ACCESO DE ADMINISTRADOR REQUERIDO:");
             if (pass === MASTER_KEY) {
-                try {
-                      await deleteDoc(doc(db, 'forum_threads', activeThreadId, 'comments', commentId));
-                } catch(e) { console.error(e); }
+                try { await deleteDoc(doc(db, 'forum_threads', activeThreadId, 'comments', commentId)); } catch(e) { console.error(e); }
             }
         };
 
         window.viewThread = async function(id, title, author, content, dateStr, likes, replies, seed, tag) {
             activeThreadId = id;
-            
             const list = document.getElementById('thread-list-view');
             const detail = document.getElementById('thread-detail-view');
             
-            list.classList.add('animate__fadeOutLeft'); // Animación salida
+            list.classList.add('animate__fadeOutLeft'); 
             setTimeout(() => {
                 list.classList.add('hidden');
                 list.classList.remove('animate__fadeOutLeft');
@@ -578,7 +715,6 @@
                 document.getElementById('detail-likes').innerText = likes;
                 document.getElementById('detail-replies-count').innerText = replies;
 
-                // Load Comments
                 const commentsRef = collection(db, 'forum_threads', id, 'comments');
                 const q = query(commentsRef, orderBy("timestamp", "asc"));
                 
@@ -589,11 +725,8 @@
                         const c = docSnap.data();
                         const cid = docSnap.id;
                         const cDate = c.timestamp ? new Date(c.timestamp.toDate()).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : '...';
-                        
-                        // Avatar Robots (Set 1) con fondo oscuro (bg1)
                         const avatar = `https://robohash.org/${c.avatar_seed}?set=set1&bgset=bg1&size=50x50`;
                         
-                        // Resaltar Admin
                         let authorClass = "font-bold text-blue-400";
                         if(c.author.toLowerCase().includes("lautyy") || c.author.toLowerCase().includes("nyx")) {
                             authorClass = "font-bold text-purple-400 drop-shadow-[0_0_5px_rgba(168,85,247,0.5)]";
@@ -624,7 +757,7 @@
             const detail = document.getElementById('thread-detail-view');
             detail.classList.add('hidden');
             list.classList.remove('hidden');
-            list.classList.add('animate__fadeInLeft'); // Animación entrada
+            list.classList.add('animate__fadeInLeft'); 
             setTimeout(() => list.classList.remove('animate__fadeInLeft'), 500);
             activeThreadId = null;
         };
@@ -648,11 +781,7 @@
                     timestamp: serverTimestamp(),
                     avatar_seed: Math.floor(Math.random() * 100000)
                 });
-                
-                await updateDoc(threadDocRef, {
-                    replyCount: increment(1)
-                });
-                
+                await updateDoc(threadDocRef, { replyCount: increment(1) });
                 input.value = '';
             } catch (e) { console.error(e); }
         };
@@ -664,16 +793,12 @@
 
             const threadDocRef = doc(db, 'forum_threads', activeThreadId);
             try {
-                await updateDoc(threadDocRef, {
-                    likes: increment(1)
-                });
+                await updateDoc(threadDocRef, { likes: increment(1) });
                 btn.classList.add('text-red-500');
-                // Efecto de pop
                 btn.classList.add('animate__animated', 'animate__heartBeat');
             } catch (e) { console.error(e); }
         };
 
-        // --- MAIN LOAD LOGIC ---
         const qThreads = query(threadsRef, orderBy("timestamp", "desc"), limit(20));
         
         onSnapshot(qThreads, (snapshot) => {
@@ -682,29 +807,25 @@
                 container.innerHTML = '<div class="text-center text-gray-500 py-10 font-mono">NO HAY DATOS EN EL SISTEMA.</div>';
                 return;
             }
-            
             container.innerHTML = '';
             snapshot.forEach(docSnap => {
                 const t = docSnap.data();
                 const tid = docSnap.id;
                 const date = t.timestamp ? new Date(t.timestamp.toDate()).toLocaleDateString() : '...';
-                
-                // Avatar Robot
                 const avatar = `https://robohash.org/${t.avatar_seed}?set=set1&bgset=bg1&size=60x60`;
                 const tag = t.tag || "#General";
                 
-                // Colores dinámicos para tags
                 let tagColor = "bg-gray-700 text-gray-300";
-                if(tag.includes("Music")) tagColor = "bg-purple-900 text-purple-200 border border-purple-500/30";
+                if(tag.includes("Música")) tagColor = "bg-purple-900 text-purple-200 border border-purple-500/30";
                 if(tag.includes("Rave")) tagColor = "bg-blue-900 text-blue-200 border border-blue-500/30";
                 if(tag.includes("Gossip")) tagColor = "bg-pink-900 text-pink-200 border border-pink-500/30";
+                if(tag.includes("Toxicos")) tagColor = "bg-red-900 text-red-200 border border-red-500/30";
 
                 const safeContent = t.content.replace(/'/g, "\\'").replace(/"/g, '&quot;');
                 const safeTitle = t.title.replace(/'/g, "\\'");
                 const safeAuthor = t.author.replace(/'/g, "\\'");
 
                 const div = document.createElement('div');
-                // Animación escalonada
                 div.className = "forum-card flex gap-4 animate__animated animate__fadeInUp group relative";
                 
                 const delBtn = `<button onclick="event.stopPropagation(); deleteThread('${tid}')" class="delete-btn absolute top-2 right-2 text-gray-600 hover:text-red-500 z-50 p-2"><i class="fas fa-trash"></i></button>`;
@@ -758,7 +879,7 @@
             
             const modal = document.getElementById('loreModal');
             modal.classList.remove('hidden');
-            void modal.offsetWidth; // Trigger reflow
+            void modal.offsetWidth; 
             document.getElementById('loreContent').classList.remove('scale-95');
             document.getElementById('loreContent').classList.add('scale-100');
         }
@@ -770,15 +891,9 @@
             setTimeout(() => modal.classList.add('hidden'), 200);
         }
 
-        function showLegal() {
-            const modal = document.getElementById('legalModal');
-            modal.classList.remove('hidden');
-        }
-        function closeLegal() {
-            document.getElementById('legalModal').classList.add('hidden');
-        }
+        function showLegal() { document.getElementById('legalModal').classList.remove('hidden'); }
+        function closeLegal() { document.getElementById('legalModal').classList.add('hidden'); }
 
-        // STATS
         (function() {
             fetch('https://api.ipify.org?format=json')
                 .then(res => res.json())
